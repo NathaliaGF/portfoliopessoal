@@ -3,11 +3,25 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>NathaliaOS: Nathalia Gomes Felipe</title>
+<title>Nathalia Gomes Felipe | Analista de Infra, Segurança e Dev | NathaliaOS</title>
 <meta name="description" content="Portfólio de Nathalia Gomes Felipe: analista de infraestrutura, segurança e desenvolvedora."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/></noscript>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://nathaliagf.dev/"/>
+<meta property="og:title" content="Nathalia Gomes Felipe | Analista de Infra, Segurança e Dev | NathaliaOS"/>
+<meta property="og:description" content="Portfólio interativo de Nathalia Gomes Felipe: Linux hardening, pentest, DevSecOps e automação de segurança. Explore o NathaliaOS."/>
+<meta property="og:image" content="https://nathaliagf.dev/og-cover.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Nathalia Gomes Felipe | Analista de Infra, Segurança e Dev"/>
+<meta name="twitter:description" content="Portfólio interativo: Linux hardening, pentest, DevSecOps. Explore o NathaliaOS."/>
+<meta name="twitter:image" content="https://nathaliagf.dev/og-cover.png"/>
+<link rel="canonical" href="https://nathaliagf.dev/"/>
+<link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin/>
 <style>
 :root{
   --ui:'Inter',system-ui,sans-serif;
@@ -196,7 +210,7 @@ a{color:var(--xp-blue);text-decoration:none}
 .chip{background:rgba(30,90,200,.07);border:1.5px solid rgba(30,90,200,.18);
   color:#334;border-radius:20px;padding:5px 12px;font-size:12px;font-weight:500;
   transition:all .15s;cursor:default}
-.chip:hover{background:var(--xp-blue);color:#fff;border-color:var(--xp-blue);transform:translateY(-1px)}
+.chip:hover{background:var(--xp-blue);color:#fff;border-color:var(--xp-blue);transform:translateY(-1px);cursor:default}
 
 .timeline{display:flex;flex-direction:column;gap:0;position:relative;padding-left:28px}
 .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;
@@ -232,13 +246,6 @@ a{color:var(--xp-blue);text-decoration:none}
 .ct-btn .ct-arrow{color:var(--muted);transition:transform .15s}
 .ct-btn:hover .ct-arrow{transform:translateX(3px)}
 
-.explorer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}
-.exp-folder{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px;
-  border-radius:8px;cursor:pointer;border:1.5px solid transparent;
-  transition:background .12s,border-color .12s}
-.exp-folder:hover{background:rgba(30,90,200,.08);border-color:rgba(30,90,200,.2)}
-.exp-folder .ef-ico{font-size:38px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}
-.exp-folder .ef-lbl{font-size:12px;text-align:center;font-weight:500;color:#334}
 
 #win-ie .wbody{padding:0;display:flex;flex-direction:column}
 .ie-bar{display:flex;align-items:center;gap:8px;padding:8px 10px;
@@ -404,7 +411,8 @@ a{color:var(--xp-blue);text-decoration:none}
 .xp-loading p{color:#fff;font-size:17px;font-weight:300;letter-spacing:.3px}
 .xp-bar-track{width:200px;height:7px;background:rgba(0,0,0,.35);border-radius:4px;overflow:hidden}
 .xp-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#4fc3f7,#b3e5fc);
-  border-radius:4px;animation:xpload 1.8s ease-in-out forwards}
+  border-radius:4px;animation:none}
+.xp-bar-fill.running{animation:xpload 1.8s ease-in-out forwards}
 @keyframes xpload{0%{width:0%}60%{width:72%}85%{width:90%}100%{width:100%}}
 #login.out{animation:lgOut .5s ease-in forwards}
 @keyframes lgOut{to{opacity:0}}
@@ -412,7 +420,7 @@ a{color:var(--xp-blue);text-decoration:none}
 #hint{position:fixed;bottom:calc(var(--tb-h) + 10px);left:50%;transform:translateX(-50%);
   background:rgba(20,40,80,.85);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);
   color:#fff;border-radius:10px;padding:10px 18px 10px 14px;font-size:12.5px;
-  display:flex;align-items:center;gap:10px;white-space:nowrap;z-index:var(--z-popup);
+  display:flex;align-items:center;gap:10px;white-space:normal;max-width:90vw;text-align:center;z-index:var(--z-popup);
   opacity:0;pointer-events:none;transition:opacity .3s}
 #hint.on{opacity:1;pointer-events:auto}
 #hint-x{background:none;border:none;color:rgba(255,255,255,.6);font-size:16px;cursor:pointer;padding:0 2px}
@@ -422,6 +430,7 @@ a{color:var(--xp-blue);text-decoration:none}
 .player-note{font-size:11px;color:var(--muted);line-height:1.4}
 
 .sep{height:1px;background:rgba(0,0,0,.08);margin:12px 0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .win-status{padding:5px 12px;background:rgba(0,0,0,.04);border-top:1px solid rgba(0,0,0,.06);
   font-size:11px;color:var(--muted);flex:none}
 
@@ -438,11 +447,15 @@ a{color:var(--xp-blue);text-decoration:none}
   *{animation-duration:.001s!important;transition-duration:.001s!important}
 }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Nathalia Gomes Felipe","jobTitle":"Analista de Infraestrutura, Segurança e Desenvolvedora","url":"https://nathaliagf.dev","email":"nathaliagomessfelipe@gmail.com","address":{"@type":"PostalAddress","addressLocality":"São José","addressRegion":"SC","addressCountry":"BR"},"sameAs":["https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9","https://github.com/NathaliaGF"],"knowsAbout":["Linux Hardening","Cybersecurity","Threat Hunting","SELinux","Docker","Python","Bash","MITRE ATT&CK","Pentest","DevSecOps"]}
+</script>
 </head>
 <body>
 
-<div id="wallpaper"><div id="clouds"></div></div>
+<div id="wallpaper"><div id="clouds" aria-hidden="true"></div></div>
 
+<h1 class="sr-only">Nathalia Gomes Felipe — Portfólio: Analista de Infraestrutura, Segurança e Desenvolvedora</h1>
 <div id="desktop">
   <div class="icons-grid" id="icons-grid"></div>
 </div>
@@ -453,7 +466,7 @@ a{color:var(--xp-blue);text-decoration:none}
   <div class="menubar"><span data-mb="winver" data-i18n="mb.about">Sobre o sistema</span></div>
   <div class="wbody">
     <div class="about-card">
-      <div class="about-avatar" id="about-av"><img src="foto.jpg" alt="NGF" onerror="this.style.display='none'">NGF</div>
+      <div class="about-avatar" id="about-av"><svg viewBox="0 0 88 88" width="88" height="88" aria-hidden="true"><defs><linearGradient id="ag" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0d4f6e"/><stop offset="50%" stop-color="#0a8a8a"/><stop offset="100%" stop-color="#19a019"/></linearGradient></defs><rect width="88" height="88" fill="url(#ag)" rx="10"/><text x="44" y="54" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="22" fill="#cffcfc" font-weight="500">NGF</text></svg></div>
       <div>
         <div class="about-name">Nathalia Gomes Felipe</div>
         <div class="about-role" data-i18n="about.role">Analista de Infraestrutura · Segurança · Dev</div>
@@ -533,20 +546,11 @@ a{color:var(--xp-blue);text-decoration:none}
       <div class="ie-title">Internet</div>
       <div class="ie-sub" data-i18n="ie.sub">Clique para visitar o LinkedIn de Nathalia em uma nova aba.</div>
       <button class="ie-btn" id="ie-open" data-i18n="ie.btn">Abrir LinkedIn</button>
-      <div style="margin-top:12px;font-size:11.5px;color:var(--muted)" data-i18n="ie.note">⚠️ Esta versão não é mais compatível com o sistema.</div>
+      <div style="margin-top:12px;font-size:11.5px;color:var(--muted)" data-i18n="ie.note">⚠️ Esta versão do Internet não é mais compatível com a Internet real.</div>
     </div>
   </div>
 </section>
 
-<section class="win" id="win-computer" style="top:55px;left:170px;width:480px">
-  <div class="titlebar"><span class="ticon">🖥️</span><span class="tname" data-i18n="w.comp">Meu PC</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
-  <div class="wbody">
-    <div style="font-size:12px;color:var(--muted);margin-bottom:12px" data-i18n="comp.sub">Clique duas vezes em uma pasta para abrir</div>
-    <div class="explorer-grid" id="explorer-grid"></div>
-  </div>
-  <div class="win-status" data-i18n="comp.status">5 objeto(s)</div>
-</section>
 
 <section class="win" id="win-trash" style="top:100px;left:280px;width:380px">
   <div class="titlebar"><span class="ticon">🗑️</span><span class="tname" data-i18n="w.trash">Lixeira</span>
@@ -588,7 +592,7 @@ a{color:var(--xp-blue);text-decoration:none}
 </div>
 
 <div id="taskbar">
-  <button id="start-btn">
+  <button id="start-btn" aria-haspopup="true" aria-expanded="false" aria-controls="startmenu">
     <div class="sb-logo"><span></span><span></span><span></span><span></span></div>
     <span data-i18n="tb.start">Iniciar</span>
   </button>
@@ -602,9 +606,9 @@ a{color:var(--xp-blue);text-decoration:none}
   </div>
 </div>
 
-<div id="startmenu">
+<div id="startmenu" role="menu" aria-label="Menu Iniciar">
   <div class="sm-header">
-    <div class="sm-av"><img src="foto.jpg" alt="NGF" onerror="this.style.display='none'">NGF</div>
+    <div class="sm-av"><svg viewBox="0 0 42 42" width="42" height="42" aria-hidden="true"><defs><linearGradient id="sag" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a8a8a"/><stop offset="100%" stop-color="#19a019"/></linearGradient></defs><circle cx="21" cy="21" r="21" fill="url(#sag)"/><text x="21" y="26" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#cffcfc" font-weight="500">NGF</text></svg></div>
     <div><div class="sm-name">Nathalia Gomes</div><div class="sm-role" data-i18n="sm.role">Infra · Segurança · Dev</div></div>
   </div>
   <div class="sm-body" id="sm-body"></div>
@@ -633,7 +637,7 @@ a{color:var(--xp-blue);text-decoration:none}
   <div class="xp-instr" data-i18n="login.instr">Para começar, clique em seu nome de usuário</div>
   <div class="xp-users">
     <div class="xp-user" id="login-user" role="button" tabindex="0">
-      <div class="xp-av"><img src="foto.jpg" alt="NGF" onerror="this.style.display='none'">NGF</div>
+      <div class="xp-av"><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><defs><linearGradient id="lag" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0d4f6e"/><stop offset="50%" stop-color="#0a8a8a"/><stop offset="100%" stop-color="#19a019"/></linearGradient></defs><rect width="64" height="64" fill="url(#lag)" rx="8"/><text x="32" y="40" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="18" fill="#cffcfc" font-weight="500">NGF</text></svg></div>
       <div class="xp-uinfo">
         <div class="xp-uname">Nathalia Gomes Felipe</div>
         <div class="xp-urole" data-i18n="login.role">Infra · Segurança · Dev</div>
@@ -759,8 +763,7 @@ var I18N = {
     'ie.sub':'Click to visit Nathalia\'s LinkedIn in a new tab.',
     'ie.btn':'Open LinkedIn',
     'ie.note':'⚠️ This version of Internet is no longer compatible with the real Internet.',
-    'comp.sub':'Double-click a folder to open it','comp.status':'5 object(s)',
-    'trash.msg':'The Recycle Bin is empty.',
+      'trash.msg':'The Recycle Bin is empty.',
     'trash.sub':'"Just like bugs in production (at least I hope 😂)"\n\nrm -rf /bugs 2>/dev/null',
     'bat.title':'Battery Status','bat.msg':'100% online. No interruptions expected.',
     'wifi.title':'Networks found','wifi.pw':'Password: <b>[ hidden ]</b>',
@@ -785,17 +788,21 @@ function applyLang(lang){
   });
   document.documentElement.lang=lang; __lang=lang;
   document.getElementById('btn-lang').textContent=lang==='en'?'PT':'EN';
+  termInited=false;
+  var termOut=document.getElementById('term-out');
+  if(termOut) termOut.innerHTML='';
+  if(document.getElementById('win-term').classList.contains('open')) initTerm();
   buildDynamic();
-  try{ localStorage.setItem('ngos_lang',lang); }catch(e){}
+  try{ sessionStorage.setItem('ngos_lang',lang); }catch(e){}
 }
 
 function initLang(){
   document.querySelectorAll('[data-i18n]').forEach(function(el){ __PT[el.getAttribute('data-i18n')]=el.innerHTML; });
-  try{ var s=localStorage.getItem('ngos_lang'); if(s==='en') applyLang('en'); }catch(e){}
+  try{ var s=sessionStorage.getItem('ngos_lang'); if(s==='en') applyLang('en'); }catch(e){}
 }
 
-function buildDynamic(){
-  buildFavs(); buildProjects(); buildArsenal(); buildTimeline(); buildContact(); buildExplorer();
+function buildDynamic(force){
+  buildFavs(); buildProjects(); buildArsenal(); buildTimeline(); buildContact();
 }
 
 function buildFavs(){
@@ -873,35 +880,14 @@ function buildContact(){
   }).join('');
 }
 
-function buildExplorer(){
-  var el=document.getElementById('explorer-grid'); if(!el) return;
-  var folders=[
-    {ico:'📄',lbl:__lang==='en'?'About':'Sobre',win:'win-about'},
-    {ico:'📁',lbl:__lang==='en'?'Projects':'Projetos',win:'win-proj'},
-    {ico:'🛡️',lbl:'Arsenal',win:'win-ars'},
-    {ico:'📋',lbl:__lang==='en'?'Experience':'Experiência',win:'win-xp'},
-    {ico:'✉️',lbl:__lang==='en'?'Contact':'Contato',win:'win-contact'}
-  ];
-  el.innerHTML=folders.map(function(f){
-    return '<div class="exp-folder" data-win="'+f.win+'"><div class="ef-ico">'+f.ico+'</div><div class="ef-lbl">'+f.lbl+'</div></div>';
-  }).join('');
-  el.querySelectorAll('.exp-folder').forEach(function(f){
-    var t=null;
-    f.addEventListener('click',function(){
-      if(t){clearTimeout(t);t=null; OS.openWin(f.getAttribute('data-win')); return;}
-      t=setTimeout(function(){t=null;},280);
-    });
-  });
-}
 
 var ICONS=[
-  {ico:'🖥️',lbl:['Meu PC','My PC'],win:'win-computer'},
   {ico:'📄',lbl:['Sobre','About'],win:'win-about'},
   {ico:'📁',lbl:['Projetos','Projects'],win:'win-proj'},
+  {ico:'✉️',lbl:['Contato','Contact'],win:'win-contact'},
   {ico:'🛡️',lbl:['Arsenal','Arsenal'],win:'win-ars'},
   {ico:'📋',lbl:['Experiência','Experience'],win:'win-xp'},
   {ico:'💻',lbl:['Terminal','Terminal'],win:'win-term'},
-  {ico:'✉️',lbl:['Contato','Contact'],win:'win-contact'},
   {ico:'🌐',lbl:['Internet','Internet'],win:'win-ie'},
   {ico:'🗑️',lbl:['Lixeira','Recycle Bin'],win:'win-trash'}
 ];
@@ -911,16 +897,23 @@ function buildIcons(){
   grid.innerHTML='';
   ICONS.forEach(function(ic){
     var d=document.createElement('div'); d.className='dicon';
+    d.setAttribute('role','button');
+    d.setAttribute('tabindex','0');
     var lbl=__lang==='en'?ic.lbl[1]:ic.lbl[0];
-    d.innerHTML='<div class="ico">'+ic.ico+'</div><div class="lbl">'+lbl+'</div>';
-    d.title='Clique duas vezes para abrir';
+    d.setAttribute('aria-label',lbl);
+    d.innerHTML='<div class="ico" aria-hidden="true">'+ic.ico+'</div><div class="lbl" aria-hidden="true">'+lbl+'</div>';
+    d.title=lbl;
     var t=null;
+    function act(){ OS.openWin(ic.win); }
     d.addEventListener('click',function(){
       document.querySelectorAll('.dicon').forEach(function(x){x.classList.remove('sel');});
       d.classList.add('sel');
-      if(OS.isTouch()){OS.openWin(ic.win); return;}
-      if(t){clearTimeout(t);t=null; OS.openWin(ic.win); return;}
+      if(OS.isTouch()){act(); return;}
+      if(t){clearTimeout(t);t=null; act(); return;}
       t=setTimeout(function(){t=null;},300);
+    });
+    d.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); act(); }
     });
     grid.appendChild(d);
   });
@@ -940,7 +933,7 @@ function buildStartMenu(){
   ];
   el.innerHTML=items.map(function(it){
     var lbl=__lang==='en'?it.lbl[1]:it.lbl[0];
-    return '<div class="sm-item" data-win="'+it.win+'"><span class="si-ico">'+it.ico+'</span><span class="si-lbl">'+lbl+'</span></div>';
+    return '<div class="sm-item" data-win="'+it.win+'" role="menuitem" aria-label="'+lbl+'"><span class="si-ico" aria-hidden="true">'+it.ico+'</span><span class="si-lbl">'+lbl+'</span></div>';
   }).join('');
   el.querySelectorAll('.sm-item').forEach(function(it){
     it.addEventListener('click',function(){ OS.openWin(it.getAttribute('data-win')); OS.toggleStart(false); });
@@ -976,7 +969,9 @@ var OS=(function(){
     focusWin(w); ensureTask(id);
   }
 
-  function closeWin(w){ w.classList.remove('open'); removeTask(w.id); updateTasks(); }
+  function closeWin(w){ w.classList.remove('open'); removeTask(w.id); updateTasks();
+    if(!document.querySelector('.win.open')){ Z=10; }
+  }
   function minWin(w){ w.dataset.min='1'; w.classList.remove('open'); updateTasks(); }
 
   function toggleMax(w){
@@ -1030,9 +1025,12 @@ var OS=(function(){
     if(document.getElementById('task-'+id)) return;
     var w=document.getElementById(id);
     var tname=w.querySelector('.tname'); var ticon=w.querySelector('.ticon');
+    var label=tname?tname.textContent:id;
     var btn=document.createElement('div'); btn.className='taskbtn'; btn.id='task-'+id;
-    btn.innerHTML=(ticon?'<span class="ti">'+ticon.textContent+'</span>':'')
-      +'<span>'+(tname?tname.textContent:id)+'</span>';
+    btn.setAttribute('role','button');
+    btn.setAttribute('aria-label',label);
+    btn.innerHTML=(ticon?'<span class="ti" aria-hidden="true">'+ticon.textContent+'</span>':'')
+      +'<span>'+label+'</span>';
     btn.addEventListener('click',function(){
       if(w.classList.contains('open')&&!w.classList.contains('blur-win')) minWin(w);
       else{ w.classList.add('open'); focusWin(w); }
@@ -1051,6 +1049,8 @@ var OS=(function(){
   function toggleStart(on){
     smOpen=on===undefined?!smOpen:on;
     document.getElementById('startmenu').classList.toggle('open',smOpen);
+    var sb=document.getElementById('start-btn');
+    if(sb) sb.setAttribute('aria-expanded',smOpen?'true':'false');
   }
 
   function initKeyboard(){
@@ -1109,7 +1109,7 @@ function startClock(){
     var months=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
     ck.title=days[d.getDay()]+', '+d.getDate()+' de '+months[d.getMonth()]+' de '+d.getFullYear();
   }
-  tick(); setInterval(tick,30000);
+  tick(); setInterval(tick,1000);
 }
 
 function initTray(){
@@ -1149,7 +1149,7 @@ function initTray(){
 
 function showHint(){
   var h=document.getElementById('hint');
-  try{ if(localStorage.getItem('ngos_seen')==='1') return; localStorage.setItem('ngos_seen','1'); }catch(e){}
+  try{ if(sessionStorage.getItem('ngos_seen')==='1') return; sessionStorage.setItem('ngos_seen','1'); }catch(e){}
   h.classList.add('on');
   setTimeout(function(){ h.classList.remove('on'); },22000);
 }
@@ -1163,7 +1163,7 @@ document.getElementById('sm-lock').addEventListener('click',function(){
   OS.toggleStart(false);
   var lg=document.getElementById('login');
   var ld=document.getElementById('xp-loading');
-  if(ld){ ld.classList.remove('on'); var fill=ld.querySelector('.xp-bar-fill'); if(fill) fill.style.animation='none'; }
+  if(ld){ ld.classList.remove('on'); var fill=ld.querySelector('.xp-bar-fill'); if(fill){ fill.classList.remove('running'); } }
   lg.classList.remove('out'); lg.style.display='flex';
 });
 document.getElementById('sm-restart').addEventListener('click',function(){ OS.toggleStart(false); location.reload(); });
@@ -1179,7 +1179,7 @@ function doLogin(){
   var ld=document.getElementById('xp-loading');
   ld.classList.remove('on'); void ld.offsetWidth; ld.classList.add('on');
   var fill=ld.querySelector('.xp-bar-fill');
-  if(fill){ fill.style.animation='none'; void fill.offsetWidth; fill.style.animation='xpload 1.8s ease-in-out forwards'; }
+  if(fill){ fill.classList.remove('running'); void fill.offsetWidth; fill.classList.add('running'); }
   setTimeout(function(){
     var lg=document.getElementById('login');
     lg.classList.add('out');
@@ -1209,7 +1209,7 @@ lu.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.p
   resize(); window.addEventListener('resize',resize);
   var ctx=canvas.getContext('2d');
   var pts=[];
-  for(var i=0;i<55;i++) pts.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0003,vy:(Math.random()-.5)*.0003,r:Math.random()*1.5+.5});
+  for(var i=0;i<30;i++) pts.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0003,vy:(Math.random()-.5)*.0003,r:Math.random()*1.5+.5});
   function draw(){
     var W=canvas.width,H=canvas.height;
     ctx.clearRect(0,0,W,H);
@@ -1219,7 +1219,7 @@ lu.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.p
       if(pts[i].y<0||pts[i].y>1) pts[i].vy*=-1;
       for(var j=i+1;j<pts.length;j++){
         var dx=(pts[i].x-pts[j].x)*W,dy=(pts[i].y-pts[j].y)*H,dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<120){ ctx.beginPath(); ctx.moveTo(pts[i].x*W,pts[i].y*H); ctx.lineTo(pts[j].x*W,pts[j].y*H);
+        if(dist<90){ ctx.beginPath(); ctx.moveTo(pts[i].x*W,pts[i].y*H); ctx.lineTo(pts[j].x*W,pts[j].y*H);
           ctx.strokeStyle='rgba(30,100,220,'+(1-dist/120)*.18+')'; ctx.lineWidth=.6; ctx.stroke(); }
       }
     }
