@@ -1,813 +1,1246 @@
 <!doctype html>
 <html lang="pt">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>NathaliaOS: Nathalia Gomes Felipe</title>
-<meta name="description" content="Portfólio de Nathalia Gomes Felipe: analista de infraestrutura, segurança e desenvolvedora. Especialista em Linux hardening, pentest, análise de vulnerabilidades, DevSecOps, redes e automação de segurança." />
-<meta name="author" content="Nathalia Gomes Felipe" />
-<meta name="keywords" content="analista de infraestrutura, seguranca, desenvolvedora, Linux hardening, SELinux, pentest, vulnerability assessment, Nmap, Nessus, Suricata, SIEM, DevSecOps, WireGuard, MITRE ATT&CK, RHEL, CentOS, Zabbix, threat hunting, SOC, GRC, NIST, OWASP, portfolio" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Nathalia Gomes Felipe: Analista de Infra, Segurança e Dev" />
-<meta property="og:description" content="Analista de infraestrutura, segurança e dev. Linux hardening, pentest, análise de vulnerabilidades, DevSecOps, redes e automação. Portfolio interativo estilo SO retrô." />
-<meta property="og:image" content="og-cover.png" />
-<meta property="og:locale" content="pt_BR" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Nathalia Gomes Felipe: Analista de Infra, Segurança e Dev" />
-<meta name="twitter:description" content="Infra · Segurança · Dev. Linux · Pentest · DevSecOps. Portfolio interativo." />
-<meta name="twitter:image" content="og-cover.png" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='2' y='2' width='13' height='13' fill='%23d63b3b'/><rect x='17' y='2' width='13' height='13' fill='%2319a019'/><rect x='2' y='17' width='13' height='13' fill='%232f6fd6'/><rect x='17' y='17' width='13' height='13' fill='%23e8b30c'/></svg>" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+<meta name="description" content="Portfólio de Nathalia Gomes Felipe: analista de infraestrutura, segurança e desenvolvedora."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-  :root{
-    --teal:#0a8a8a;--silver:#c0c0c0;--silver2:#d4d0c8;
-    --hi:#ffffff;--lt:#dfdfdf;--sh:#808080;--dk:#000000;
-    --navy:#000080;--navy2:#1084d0;--green:#19e019;--green-dk:#0a3d0a;
-    --ui:Tahoma,"Segoe UI",Geneva,Verdana,sans-serif;
-    --crt:"VT323",monospace;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{font-family:var(--ui);font-size:13px;color:#000;background:var(--teal);overflow:hidden;-webkit-font-smoothing:none;cursor:default}
-  button{font-family:var(--ui);font-size:13px}
+:root{
+  --ui:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --xp-blue:#1f5fb5;
+  --xp-blue-lt:#3a7fd5;
+  --xp-blue-dk:#0d3a7a;
+  --xp-start:#2a7f3c;
+  --xp-start-lt:#3da052;
+  --xp-tb:#1a5cb8;
+  --xp-tb-grad:linear-gradient(180deg,#2d72cc 0%,#1a5cb8 100%);
+  --glass-bg:rgba(255,255,255,0.72);
+  --glass-border:rgba(255,255,255,0.85);
+  --glass-shadow:0 8px 32px rgba(0,0,80,.18), 0 1.5px 0 rgba(255,255,255,.7) inset;
+  --blur:blur(18px);
+  --title-h:32px;
+  --title-grad:linear-gradient(180deg,#4a9af5 0%,#1a5cb8 48%,#1550a8 49%,#1d62c5 100%);
+  --title-blur:linear-gradient(180deg,#8eaecf 0%,#6687aa 100%);
+  --title-text:#fff;
+  --tb-h:44px;
+  --tb-bg:var(--xp-tb-grad);
+  --desk-icon-w:78px;
+  --ink:#1a1a2e;
+  --muted:#556;
+  --radius:12px;
+  --z-desk:1;
+  --z-win:10;
+  --z-taskbar:900;
+  --z-startmenu:950;
+  --z-login:9999;
+  --z-popup:1000;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;font-family:var(--ui);font-size:13px;color:var(--ink);-webkit-font-smoothing:antialiased}
+::selection{background:var(--xp-blue);color:#fff}
+button{font-family:var(--ui);cursor:pointer}
+a{color:var(--xp-blue);text-decoration:none}
 
-  /* ---------- bevel helpers ---------- */
-  .raise{box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  .sink{box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt)}
+#wallpaper{
+  position:fixed;inset:0 0 var(--tb-h) 0;z-index:0;overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(30,90,180,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(10,138,138,.12) 0%, transparent 55%),
+    linear-gradient(145deg,#0d1b2e 0%,#0f2340 35%,#0d2035 65%,#081828 100%);
+}
+#wallpaper::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle,rgba(30,90,200,.06) 1px,transparent 1px),
+    radial-gradient(circle,rgba(30,90,200,.04) 1px,transparent 1px);
+  background-size:48px 48px, 24px 24px;
+  background-position:0 0, 12px 12px;
+}
+#wallpaper::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,rgba(30,90,200,.3),rgba(10,138,138,.4),rgba(30,90,200,.3),transparent);
+}
+#clouds{position:absolute;inset:0;z-index:1;pointer-events:none}
 
-  /* ---------- boot ---------- */
-  #boot{position:fixed;inset:0;z-index:9999;background:#000;color:var(--green);font-family:var(--crt);font-size:22px;line-height:1.35;padding:34px 26px;white-space:pre-wrap;cursor:pointer;text-shadow:0 0 5px rgba(25,224,25,.55)}
-  #boot .skip{position:absolute;right:18px;bottom:14px;font-size:18px;opacity:.7}
-  #boot::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
+#desktop{position:fixed;inset:0 0 var(--tb-h) 0;z-index:var(--z-desk)}
+.icons-grid{
+  display:flex;flex-direction:column;flex-wrap:wrap;
+  gap:6px;padding:16px 10px;
+  max-height:calc(100vh - var(--tb-h) - 20px);
+}
+.dicon{
+  width:var(--desk-icon-w);padding:6px 4px 5px;
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  border-radius:6px;cursor:default;user-select:none;
+  border:1.5px solid transparent;transition:background .12s,border-color .12s;
+}
+.dicon:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.6)}
+.dicon.sel{background:rgba(30,90,200,.32);border-color:rgba(180,210,255,.7)}
+.dicon .ico{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:32px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+.dicon .lbl{font-size:11px;color:#fff;text-align:center;line-height:1.2;
+  text-shadow:1px 1px 2px rgba(0,0,0,.85),0 0 6px rgba(0,0,0,.7);
+  max-width:76px;word-break:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-  /* ---------- desktop ---------- */
-  #desktop{position:fixed;inset:0 0 38px 0;overflow:hidden}
-  #desktop .wm{position:absolute;right:14px;bottom:10px;font-family:var(--crt);font-size:42px;color:rgba(255,255,255,.16);letter-spacing:1px;user-select:none}
-  .icons{position:absolute;top:14px;left:10px;display:flex;flex-direction:column;flex-wrap:wrap;gap:4px;max-height:calc(100vh - 70px)}
-  .dicon{width:84px;padding:8px 4px 6px;text-align:center;color:#fff;cursor:pointer;border:1px dotted transparent;user-select:none}
-  .dicon:hover{background:rgba(0,0,80,.25)}
-  .dicon.sel{background:rgba(0,0,128,.5);border-color:#fff}
-  .dicon svg{width:32px;height:32px;display:block;margin:0 auto 5px;image-rendering:pixelated}
-  .dicon span{font-size:12px;text-shadow:1px 1px 1px #000;line-height:1.2;display:inline-block}
+.win{
+  position:fixed;z-index:var(--z-win);
+  display:none;flex-direction:column;
+  min-width:320px;min-height:200px;
+  border-radius:var(--radius) var(--radius) 8px 8px;
+  background:var(--glass-bg);
+  backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1.5px solid var(--glass-border);
+  box-shadow:var(--glass-shadow);
+  animation:winPop .18s cubic-bezier(.34,1.56,.64,1) both;
+  overflow:hidden;
+}
+.win.open{display:flex}
+@keyframes winPop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+.win.blur-win .titlebar{background:var(--title-blur)}
+.win.blur-win .tbtn{opacity:.65}
 
-  /* ---------- windows ---------- */
-  .win{position:absolute;background:var(--silver);min-width:260px;display:none;flex-direction:column;z-index:10;
-       box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  .win.open{display:flex}
-  .win.opening{animation:winpop .12s ease-out both}
-  @keyframes winpop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
-  .title{display:flex;align-items:center;gap:6px;height:24px;padding:0 3px 0 5px;cursor:default;
-          background:linear-gradient(90deg,var(--navy),var(--navy2));color:#fff;font-weight:bold;user-select:none}
-  .win.blur .title{background:linear-gradient(90deg,#7b7b7b,#b3b3b3)}
-  .title .tname{flex:1;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .title .ticon{width:16px;height:16px;flex:none}
-  #desktop .wm{position:absolute;right:14px;bottom:10px;font-family:var(--crt);font-size:42px;color:rgba(255,255,255,.28);letter-spacing:1px;user-select:none}
-  .tbtns{display:flex;gap:2px}
-  .tbtn{width:18px;height:18px;background:var(--silver);font-size:11px;font-weight:bold;line-height:14px;color:#000;cursor:pointer;
-        display:flex;align-items:center;justify-content:center;position:relative;
-        box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  .tbtn::before{content:"";position:absolute;inset:-8px;}
-  .tbtn:active{box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt)}
-  .wbody{padding:14px;overflow:auto;max-height:70vh}
-  .menubar{display:flex;gap:14px;padding:2px 8px;font-size:12px;background:var(--silver)}
-  .menubar span{padding:1px 4px}.menubar span u{text-decoration:underline}
+.titlebar{
+  display:flex;align-items:center;gap:6px;
+  height:var(--title-h);padding:0 8px 0 10px;
+  background:var(--title-grad);
+  border-radius:calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
+  cursor:default;user-select:none;flex:none;
+}
+.titlebar .ticon{font-size:15px;flex:none}
+.titlebar .tname{flex:1;color:var(--title-text);font-size:12.5px;font-weight:600;
+  letter-spacing:.2px;text-shadow:0 1px 2px rgba(0,0,0,.4);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tbtns{display:flex;gap:5px;flex:none}
+.tbtn{
+  width:20px;height:20px;border-radius:50%;border:none;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:transparent;font-weight:700;
+  transition:color .15s,filter .15s;position:relative;
+}
+.tbtn:hover{color:rgba(0,0,0,.6);filter:brightness(1.1)}
+.tbtn.cl{background:radial-gradient(circle at 40% 35%,#ff6b6b,#c0392b)}
+.tbtn.mx{background:radial-gradient(circle at 40% 35%,#ffd93d,#e67e22)}
+.tbtn.mn{background:radial-gradient(circle at 40% 35%,#6bcb77,#27ae60)}
+.tbtn::before{content:"";position:absolute;inset:2px;border-radius:50%;background:rgba(255,255,255,.2)}
 
-  h2.win-h{font-size:15px;margin:0 0 8px}
-  .wbody p{line-height:1.55;margin:0 0 10px;max-width:62ch}
-  .wbody p.lead{font-size:14px}
-  .muted{color:#202020}
-  hr.div{border:none;height:2px;box-shadow:inset 0 1px var(--sh),inset 0 -1px var(--hi);margin:12px 0}
+.menubar{display:flex;gap:0;padding:2px 8px;background:rgba(240,244,255,.85);border-bottom:1px solid rgba(0,0,100,.08);flex:none}
+.menubar span{padding:3px 8px;border-radius:4px;cursor:default;font-size:12px;color:#334}
+.menubar span:hover{background:var(--xp-blue);color:#fff}
 
-  /* about layout */
-  .about-row{display:flex;gap:16px;align-items:flex-start}
-  .avatar{flex:none;width:96px;height:112px;background:#fff;padding:5px;
-          box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt)}
-  .avatar .pic{width:100%;height:84px;background:linear-gradient(160deg,#2a6e6e,#0a8a8a);display:flex;align-items:center;justify-content:center}
-  .avatar .cap{font-size:12px;text-align:center;margin-top:4px}
+.wbody{flex:1;overflow:auto;padding:16px}
+.wbody::-webkit-scrollbar{width:8px}
+.wbody::-webkit-scrollbar-track{background:rgba(0,0,0,.04)}
+.wbody::-webkit-scrollbar-thumb{background:rgba(0,0,120,.18);border-radius:4px}
 
-  /* file explorer (projects) */
-  .toolbar{display:flex;gap:6px;padding:6px;background:var(--silver)}
-  .files{background:#fff;padding:8px;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;
-         box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt)}
-  .file{padding:8px 6px;text-align:center;cursor:default;border:1px dotted transparent}
-  .file:hover{background:#000080;color:#fff;border-color:#fff}
-  .file svg{width:34px;height:34px;display:block;margin:0 auto 5px}
-  .file .fn{font-size:12px;word-break:break-word;line-height:1.2}
-  .file .badge{display:inline-block;margin-top:4px;font-size:10px;color:#0a6e0a;font-weight:bold}
-  .file:hover .badge{color:#7dff7d}
-  .file .acts{margin-top:6px;display:flex;gap:5px;justify-content:center}
-  .file .acts a{font-size:11px;color:#00f;text-decoration:underline}
-  .file:hover .acts a{color:#fff}
-  .statusbar{display:flex;justify-content:space-between;padding:3px 8px;font-size:11px;margin-top:8px}
+.win.maxed{border-radius:0!important;top:0!important;left:0!important;
+  width:100vw!important;height:calc(100vh - var(--tb-h))!important}
 
-  /* tabs (arsenal) */
-  .tabs{display:flex;gap:2px;padding:0 4px;position:relative;z-index:2;overflow-x:auto;overflow-y:visible;scrollbar-width:none}
-  .tabs::-webkit-scrollbar{display:none}
-  .tab{padding:4px 12px;background:var(--silver);cursor:pointer;font-size:12px;border-bottom:none;
-       box-shadow:inset 1px 1px var(--hi),inset -1px 0 var(--sh);position:relative;top:2px}
-  .tab.active{top:0;padding-bottom:7px;font-weight:bold}
-  .tabpanel{display:none;padding:14px;background:var(--silver);
-            box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  .tabpanel.active{display:block;min-height:80px}
-  .chiplist{display:flex;flex-wrap:wrap;gap:7px}
-  .chip{background:var(--silver);padding:5px 11px;font-size:12px;
-        box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt);cursor:default}
-  .chip:hover{box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt);background:var(--lt)}
+.about-card{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px}
+.about-avatar{width:88px;height:88px;border-radius:10px;border:2px solid rgba(30,90,200,.25);
+  background:linear-gradient(135deg,#0d4f6e,#0a8a8a 50%,#19a019);
+  display:flex;align-items:center;justify-content:center;font-size:22px;color:#cffcfc;
+  font-family:var(--mono);flex:none;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.about-avatar img{width:100%;height:100%;object-fit:cover}
+.about-name{font-size:18px;font-weight:700;color:var(--ink);line-height:1.2}
+.about-role{font-size:12px;color:var(--xp-blue);font-weight:600;margin-top:3px;letter-spacing:.3px}
+.about-loc{font-size:12px;color:var(--muted);margin-top:4px}
+.about-bio{font-size:13px;line-height:1.65;color:#334;margin-bottom:14px;max-width:52ch}
+.about-favs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tag{background:rgba(30,90,200,.08);border:1px solid rgba(30,90,200,.18);
+  color:var(--xp-blue);border-radius:20px;padding:3px 10px;font-size:11.5px;font-weight:500}
+.about-btn{display:inline-flex;align-items:center;gap:6px;background:var(--xp-blue);color:#fff;
+  border:none;border-radius:8px;padding:8px 16px;font-size:12.5px;font-weight:600;cursor:pointer;
+  box-shadow:0 2px 8px rgba(30,90,200,.3);transition:filter .15s,transform .15s}
+.about-btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
 
-  /* experience */
-  .xpitem{margin-bottom:14px}
-  .xpitem .when{font-weight:bold}
-  .xpitem .org{color:#000080;font-weight:bold}
-  .xpitem .ds{line-height:1.5;margin-top:3px;max-width:64ch}
+#win-winver{width:380px}
+.winver-body{display:flex;flex-direction:column;align-items:center;gap:12px;padding:28px;text-align:center}
+.winver-logo{font-size:48px}
+.winver-title{font-size:18px;font-weight:700;color:var(--xp-blue)}
+.winver-sub{font-size:13px;color:var(--muted)}
 
-  /* contact dialog */
-  .dlg-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:14px}
-  .dlg-ic{font-family:var(--crt);font-size:34px;color:#000080;line-height:1}
-  .btnrow{display:flex;flex-direction:column;gap:8px;max-width:340px}
-  .b98{display:flex;align-items:center;gap:9px;text-decoration:none;color:#000;background:var(--silver);padding:9px 12px;cursor:pointer;
-       box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  .b98:active{box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt)}
-  .b98 b{font-family:var(--crt);font-size:18px;color:#000080;width:20px;text-align:center}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.proj-card{background:#fff;border-radius:10px;border:1.5px solid rgba(0,0,0,.07);
+  overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:transform .18s,box-shadow .18s}
+.proj-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.13)}
+.proj-thumb{height:110px;background:linear-gradient(135deg,#1a5cb8,#0a8a8a);
+  display:flex;align-items:center;justify-content:center;font-size:36px}
+.proj-thumb.sec{background:linear-gradient(135deg,#1a3a6e,#2a5cb8)}
+.proj-thumb.data{background:linear-gradient(135deg,#6e1a4e,#b82a7c)}
+.proj-thumb.net{background:linear-gradient(135deg,#1a6e3a,#2ab85c)}
+.proj-body{padding:12px}
+.proj-name{font-size:13.5px;font-weight:700;margin-bottom:4px}
+.proj-desc{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px;min-height:36px}
+.proj-techs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.proj-tech{background:rgba(0,0,0,.05);border-radius:4px;padding:2px 7px;font-size:10.5px;color:#445;font-family:var(--mono)}
+.proj-actions{display:flex;gap:8px}
+.plink{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;
+  padding:5px 10px;border-radius:6px;border:1.5px solid transparent;transition:all .15s;cursor:pointer}
+.plink.gh{border-color:rgba(0,0,0,.18);color:#334}
+.plink.gh:hover{background:#24292e;color:#fff;border-color:#24292e}
+.plink.demo{background:var(--xp-blue);color:#fff;border-color:var(--xp-blue)}
+.plink.demo:hover{filter:brightness(1.12)}
+.plink.live-badge{font-size:10px;padding:3px 7px;background:#16a34a;color:#fff;border:none;border-radius:10px}
 
-  /* terminal */
-  #win-term .wbody{background:#000;padding:0}
-  .term{font-family:var(--crt);font-size:19px;color:var(--green);background:#000;padding:12px 14px;min-height:300px;line-height:1.3;text-shadow:0 0 4px rgba(25,224,25,.5);white-space:pre-wrap}
-  .term .c{color:#fff}
-  .term a{color:var(--green);text-decoration:underline}
-  .term .blink{animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.ars-tabs{display:flex;gap:0;border-bottom:2px solid rgba(30,90,200,.15);margin-bottom:14px;overflow-x:auto}
+.ars-tab{padding:7px 14px;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;
+  border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:color .15s}
+.ars-tab:hover{color:var(--xp-blue)}
+.ars-tab.active{color:var(--xp-blue);border-bottom-color:var(--xp-blue);font-weight:700}
+.ars-panel{display:none}
+.ars-panel.active{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:rgba(30,90,200,.07);border:1.5px solid rgba(30,90,200,.18);
+  color:#334;border-radius:20px;padding:5px 12px;font-size:12px;font-weight:500;
+  transition:all .15s;cursor:default}
+.chip:hover{background:var(--xp-blue);color:#fff;border-color:var(--xp-blue);transform:translateY(-1px)}
 
-  /* ---------- taskbar ---------- */
-  #taskbar{position:fixed;left:0;right:0;bottom:0;height:38px;display:flex;align-items:center;gap:6px;padding:4px 4px;
-           background:var(--silver);box-shadow:inset 0 1px var(--lt),inset 0 2px var(--hi);z-index:5000}
-  #task-sep{width:1px;height:22px;background:var(--sh);box-shadow:1px 0 0 var(--hi);flex:none;margin:0 3px}
-  #start{display:flex;align-items:center;gap:7px;font-weight:bold;padding:3px 10px 3px 7px;cursor:pointer;height:30px;
-         box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  #start.on{box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt)}
-  #start svg{width:20px;height:20px}
-  .tasks{flex:1;display:flex;gap:5px;overflow:hidden}
-  .taskbtn{min-width:130px;max-width:170px;height:30px;display:flex;align-items:center;gap:7px;padding:0 9px;cursor:pointer;font-size:12px;
-           white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-           box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  .taskbtn.active{font-weight:bold;box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt);background:#bfb}
-  .taskbtn svg{width:16px;height:16px;flex:none}
-  .tray{display:flex;align-items:center;gap:8px;height:30px;padding:0 10px;
-        box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt)}
-  #clock{font-size:12px;min-width:52px;text-align:center}
-  #langbtn{cursor:pointer;font-size:11px;font-weight:bold;padding:2px 6px;background:var(--silver);
-           box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  .tray .lock{color:#0a6e0a;font-weight:bold}
+.timeline{display:flex;flex-direction:column;gap:0;position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;
+  width:2px;background:linear-gradient(180deg,var(--xp-blue),rgba(30,90,200,.1))}
+.tl-item{position:relative;padding-bottom:22px}
+.tl-dot{position:absolute;left:-23px;top:4px;width:12px;height:12px;border-radius:50%;
+  background:var(--xp-blue);border:2.5px solid #fff;box-shadow:0 0 0 2px var(--xp-blue)}
+.tl-item:last-child{padding-bottom:0}
+.tl-period{font-size:11px;font-weight:700;color:var(--xp-blue);letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px}
+.tl-role{font-size:14px;font-weight:700;color:var(--ink)}
+.tl-org{font-size:12px;color:var(--muted);margin-bottom:6px}
+.tl-desc{font-size:12.5px;line-height:1.6;color:#445;max-width:58ch}
 
-  /* ---------- start menu ---------- */
-  #startmenu{position:fixed;left:4px;bottom:40px;width:240px;display:none;z-index:6000;background:var(--silver);
-             box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  #startmenu.on{display:flex;animation:smup .12s ease-out both}
-  @keyframes smup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  #startmenu .band{width:34px;background:linear-gradient(#000080,#1084d0);writing-mode:vertical-rl;transform:rotate(180deg);
-                   color:#fff;font-weight:bold;font-size:18px;text-align:center;padding:10px 0;letter-spacing:1px}
-  #startmenu .band b{font-family:var(--crt);font-size:22px}
-  #startmenu .items{flex:1;padding:3px}
-  .mi{display:flex;align-items:center;gap:10px;padding:7px 10px;cursor:pointer}
-  .mi:hover{background:#000080;color:#fff}
-  .mi svg{width:22px;height:22px;flex:none}
-  .mi.sep{border-top:1px solid var(--sh);box-shadow:0 -1px var(--hi);margin:3px 0;padding-top:8px}
+#win-term .wbody{background:#0d1117;padding:0;display:flex;flex-direction:column}
+.term-out{flex:1;overflow-y:auto;padding:12px 14px;font-family:var(--mono);font-size:13.5px;
+  color:#c9d1d9;line-height:1.45;white-space:pre-wrap;min-height:200px}
+.term-out .t-cmd{color:#79c0ff}
+.term-out .t-info{color:#56d364}
+.term-out .t-err{color:#f85149}
+.term-in-row{display:flex;align-items:center;gap:6px;padding:8px 14px;border-top:1px solid #21262d;flex:none}
+.term-prompt{font-family:var(--mono);font-size:13.5px;color:#56d364;white-space:nowrap;flex:none}
+.term-input{flex:1;background:transparent;border:none;outline:none;
+  font-family:var(--mono);font-size:13.5px;color:#c9d1d9;caret-color:#79c0ff}
 
-  /* shutdown screen */
-  #shutdown{position:fixed;inset:0;z-index:9998;background:#000;color:#e8a30c;display:none;
-            align-items:center;justify-content:center;flex-direction:column;gap:26px;text-align:center;padding:24px}
-  #shutdown.on{display:flex}
-  #shutdown .msg{font-family:var(--crt);font-size:30px;text-shadow:0 0 6px rgba(232,163,12,.5);line-height:1.4}
-  #shutdown button{padding:10px 20px;background:var(--silver);cursor:pointer;font-size:13px;
-                   box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
+.contact-lead{font-size:13.5px;color:#445;line-height:1.6;margin-bottom:18px;max-width:44ch}
+.ct-links{display:flex;flex-direction:column;gap:10px}
+.ct-btn{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;
+  border:1.5px solid rgba(0,0,0,.1);background:#fff;cursor:pointer;text-decoration:none;color:var(--ink);
+  font-size:13px;font-weight:500;transition:all .15s;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.ct-btn:hover{transform:translateX(4px);box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.ct-btn .ct-ico{font-size:22px;width:32px;text-align:center;flex:none}
+.ct-btn .ct-label{flex:1}
+.ct-btn .ct-arrow{color:var(--muted);transition:transform .15s}
+.ct-btn:hover .ct-arrow{transform:translateX(3px)}
 
-  @media (max-width:760px){
-    #desktop{inset:0 0 46px 0}
-    .icons{flex-direction:row;flex-wrap:wrap;max-height:none;width:calc(100% - 20px);gap:2px}
-    .dicon{width:74px}
-    #taskbar{height:46px}
-    .tasks{display:none}
-    .win.open{display:flex!important;inset:4px 4px auto 4px!important;left:4px!important;top:4px!important;
-              width:calc(100% - 8px)!important;max-height:calc(100vh - 56px)}
-    .wbody{max-height:calc(100vh - 110px)}
-    .title{height:30px}.tbtn{width:24px;height:24px;font-size:13px}
-    #startmenu{width:calc(100% - 8px);bottom:48px}
-  }
-  @media (prefers-reduced-motion:reduce){ .blink,.term .blink{animation:none} #boot::after{display:none} .win.opening{animation:none} }
+.explorer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}
+.exp-folder{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px;
+  border-radius:8px;cursor:pointer;border:1.5px solid transparent;
+  transition:background .12s,border-color .12s}
+.exp-folder:hover{background:rgba(30,90,200,.08);border-color:rgba(30,90,200,.2)}
+.exp-folder .ef-ico{font-size:38px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}
+.exp-folder .ef-lbl{font-size:12px;text-align:center;font-weight:500;color:#334}
 
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-  .desktop-id{position:absolute;top:16px;left:50%;transform:translateX(-50%);z-index:2;text-align:center;color:#fff;user-select:none;pointer-events:none}
-  .desktop-id .nm{font-family:var(--crt);font-size:30px;letter-spacing:1px;text-shadow:2px 2px 0 rgba(0,0,0,.4)}
-  .desktop-id .rl{font-size:13px;margin-top:2px;text-shadow:1px 1px 1px #000}
-  .desktop-id .q{margin-top:9px;display:flex;gap:8px;justify-content:center}
-  .desktop-id .q a{pointer-events:auto;font-size:12px;text-decoration:none;color:#000;background:var(--silver);padding:6px 12px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;
-    box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  .desktop-id .q a:active{box-shadow:inset 1px 1px var(--sh),inset -1px -1px var(--hi),inset 2px 2px #000,inset -2px -2px var(--lt)}
-  #files{display:flex!important;flex-direction:column;padding:4px}
-  .frow{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;padding:11px 8px;border-bottom:1px solid #e1e1e1;color:#000}
-  .frow:last-child{border-bottom:none}
-  .frow:hover{background:#000080;color:#fff}
-  .frow .fi svg{width:26px;height:26px}
-  .frow .fn{font-weight:bold;font-size:13px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .frow .lv{font-size:10px;color:#0a6e0a;font-weight:bold}.frow:hover .lv{color:#7dff7d}
-  .frow .fd{font-size:12px;line-height:1.45;margin-top:3px;max-width:60ch}
-  .frow .fk{font-size:11px;color:#3a3f45;margin-top:4px}.frow:hover .fk{color:#cdd6e6}
-  .frow .fa{margin-top:7px;display:flex;gap:14px;flex-wrap:wrap}
-  .frow .fa a,.frow .fa button{font-size:11.5px;color:#00309e;text-decoration:underline;background:none;border:none;cursor:pointer;padding:0;font-family:var(--ui)}
-  .frow .fa a:active,.frow .fa button:active{opacity:.6}
-  .frow:hover .fa a,.frow:hover .fa button{color:#cfe1ff}
-  .avatar .pic{position:relative}
-  .avatar .pic-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
-  .avatar .pic-mono{font-family:var(--crt);font-size:30px;color:#cffcfc}
-  .creds h3{font-size:12.5px;margin:0 0 6px}
-  .badges{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:4px}
-  .badges span{font-size:11px;background:var(--silver);padding:4px 9px;
-    box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt)}
-  .badges span.lbl{box-shadow:none;background:none;font-weight:bold;padding-left:0}
-  #hint{position:fixed;left:10px;bottom:46px;z-index:7000;max-width:300px;display:none;background:#ffffe1;color:#000;
-    padding:12px 14px 11px;font-size:12.5px;line-height:1.5;border:1px solid #000;box-shadow:3px 3px 0 rgba(0,0,0,.4)}
-  #hint.on{display:block}
-  #hint b{display:block;margin-bottom:5px}
-  #hint .x{margin-top:9px;font-size:11px;color:#00309e;text-decoration:underline;cursor:pointer;display:inline-block}
-  #win-preview .wbody{padding:0;background:#fff}
-  #prevbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 8px;background:var(--silver);font-size:11px}
-  #prevbar a{color:#00309e}
-  #prevthumb{background:var(--silver2)}
-  .dicon:focus-visible,.tbtn:focus-visible,#langbtn:focus-visible,#start:focus-visible,.b98:focus-visible,.frow .fa a:focus-visible,.frow .fa button:focus-visible{outline:2px dotted #fff;outline-offset:2px}
-  #start:focus-visible,.b98:focus-visible{outline-color:#000080}
-  @media (max-width:760px){
-    .desktop-id{display:none}
-    #hint{bottom:54px}
-  }
+#win-ie .wbody{padding:0;display:flex;flex-direction:column}
+.ie-bar{display:flex;align-items:center;gap:8px;padding:8px 10px;
+  background:rgba(230,236,255,.9);border-bottom:1px solid rgba(0,0,100,.1);flex:none}
+.ie-back,.ie-fwd,.ie-go{background:rgba(30,90,200,.1);border:1px solid rgba(30,90,200,.2);
+  border-radius:5px;padding:3px 8px;font-size:12px;cursor:pointer;color:var(--xp-blue)}
+.ie-back:hover,.ie-fwd:hover,.ie-go:hover{background:var(--xp-blue);color:#fff}
+.ie-url{flex:1;background:#fff;border:1.5px solid rgba(0,0,100,.2);border-radius:5px;
+  padding:4px 10px;font-size:12px;font-family:var(--mono);color:var(--muted)}
+.ie-content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;padding:28px;text-align:center;background:#f0f4ff}
+.ie-logo{font-size:52px}
+.ie-title{font-size:20px;font-weight:700;color:var(--xp-blue)}
+.ie-sub{font-size:13px;color:var(--muted);max-width:36ch;line-height:1.6}
+.ie-btn{background:var(--xp-blue);color:#fff;border:none;border-radius:8px;
+  padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;
+  box-shadow:0 3px 10px rgba(30,90,200,.3);transition:filter .15s}
+.ie-btn:hover{filter:brightness(1.12)}
+
+.trash-body{display:flex;flex-direction:column;align-items:center;gap:12px;padding:28px;text-align:center}
+.trash-ico{font-size:54px}
+.trash-msg{font-size:14px;font-weight:600;color:var(--ink)}
+.trash-sub{font-size:12.5px;color:var(--muted);line-height:1.6;max-width:32ch}
+
+.tray-popup{
+  position:fixed;z-index:var(--z-popup);
+  background:var(--glass-bg);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1.5px solid var(--glass-border);border-radius:10px;
+  box-shadow:0 8px 28px rgba(0,0,0,.18);padding:16px 18px;
+  display:none;min-width:200px;
+}
+.tray-popup.open{display:block;animation:popIn .15s ease-out both}
+@keyframes popIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.popup-title{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.8px;margin-bottom:10px}
+.popup-item{font-size:13px;color:var(--ink);margin-bottom:6px}
+.popup-item b{color:var(--xp-blue)}
+.popup-net{font-family:var(--mono);font-size:13px;color:var(--ink);
+  background:rgba(0,0,0,.04);border-radius:6px;padding:8px 10px;margin:6px 0;letter-spacing:.5px}
+.popup-pw-note{font-size:11.5px;color:var(--muted);margin-bottom:10px}
+.popup-btn{width:100%;background:var(--xp-blue);color:#fff;border:none;border-radius:7px;
+  padding:8px;font-size:12.5px;font-weight:600;cursor:pointer;transition:filter .15s}
+.popup-btn:hover{filter:brightness(1.12)}
+
+#taskbar{
+  position:fixed;left:0;right:0;bottom:0;height:var(--tb-h);z-index:var(--z-taskbar);
+  background:var(--tb-bg);
+  display:flex;align-items:center;gap:4px;padding:0 6px;
+  box-shadow:0 -1px 0 rgba(255,255,255,.2),0 -3px 12px rgba(0,0,0,.3);
+}
+#start-btn{
+  display:flex;align-items:center;gap:7px;height:34px;padding:0 14px 0 10px;
+  background:linear-gradient(180deg,#4caf6a,#2a7f3c);
+  border-radius:0 20px 20px 0;border:none;color:#fff;font-size:14px;font-weight:700;
+  cursor:pointer;letter-spacing:.3px;margin-left:-6px;
+  box-shadow:1px 0 8px rgba(0,0,0,.25);transition:filter .15s;flex:none;
+}
+#start-btn:hover{filter:brightness(1.1)}
+#start-btn .sb-logo{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:20px;height:20px;flex:none}
+#start-btn .sb-logo span{border-radius:1.5px}
+#start-btn .sb-logo span:nth-child(1){background:#f44}
+#start-btn .sb-logo span:nth-child(2){background:#4f4}
+#start-btn .sb-logo span:nth-child(3){background:#44f}
+#start-btn .sb-logo span:nth-child(4){background:#ff4}
+#tasks{flex:1;display:flex;gap:4px;overflow:hidden;align-items:center}
+.taskbtn{
+  display:flex;align-items:center;gap:6px;height:30px;padding:0 10px;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);
+  border-radius:5px;color:#fff;font-size:12px;max-width:160px;
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;cursor:pointer;
+  transition:background .12s;flex:none;
+}
+.taskbtn:hover,.taskbtn.active{background:rgba(255,255,255,.28)}
+.taskbtn .ti{font-size:14px;flex:none}
+#tray{display:flex;align-items:center;gap:8px;padding:0 8px;flex:none}
+.tray-btn{background:none;border:none;color:#fff;cursor:pointer;font-size:16px;
+  padding:4px;border-radius:4px;transition:background .12s;line-height:1}
+.tray-btn:hover{background:rgba(255,255,255,.18)}
+#clock-display{font-size:12px;color:#fff;font-weight:500;text-align:center;min-width:50px;
+  padding:3px 6px;border-radius:4px;cursor:default}
+#clock-display:hover{background:rgba(255,255,255,.18)}
+
+#startmenu{
+  position:fixed;left:0;bottom:var(--tb-h);z-index:var(--z-startmenu);
+  width:320px;display:none;
+  background:var(--glass-bg);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1.5px solid var(--glass-border);border-radius:0 12px 0 0;
+  box-shadow:4px -4px 24px rgba(0,0,0,.22);overflow:hidden;
+  animation:smUp .16s ease-out both;
+}
+@keyframes smUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#startmenu.open{display:block}
+.sm-header{
+  background:linear-gradient(90deg,var(--xp-blue-dk),var(--xp-blue));
+  display:flex;align-items:center;gap:12px;padding:12px 14px;
+}
+.sm-av{width:42px;height:42px;border-radius:50%;border:2px solid rgba(255,255,255,.5);
+  background:linear-gradient(135deg,#0a8a8a,#19a019);display:flex;align-items:center;
+  justify-content:center;font-family:var(--mono);font-size:14px;color:#cffcfc;flex:none;overflow:hidden}
+.sm-av img{width:100%;height:100%;object-fit:cover}
+.sm-name{color:#fff;font-size:14px;font-weight:700}
+.sm-role{color:rgba(255,255,255,.7);font-size:11px;margin-top:1px}
+.sm-body{padding:8px 6px}
+.sm-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;cursor:pointer;transition:background .12s}
+.sm-item:hover{background:rgba(30,90,200,.1)}
+.sm-item .si-ico{font-size:20px;width:28px;text-align:center;flex:none}
+.sm-item .si-lbl{font-size:13px;font-weight:500;color:var(--ink)}
+.sm-sep{height:1px;background:rgba(0,0,0,.07);margin:6px 10px}
+.sm-footer{background:linear-gradient(90deg,var(--xp-blue-dk),var(--xp-blue));
+  display:flex;justify-content:flex-end;gap:8px;padding:8px 12px}
+.sm-foot-btn{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);border-radius:5px;padding:5px 12px;
+  color:#fff;font-size:12px;cursor:pointer;transition:background .12s}
+.sm-foot-btn:hover{background:rgba(255,255,255,.28)}
+
+#login{
+  position:fixed;inset:0;z-index:var(--z-login);
+  background:linear-gradient(180deg,#1a4a8a 0%,#2b6cb8 40%,#1e56a0 70%,#163d7a 100%);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+.xp-top{
+  display:flex;align-items:center;justify-content:space-between;padding:16px 48px;
+  background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.15),rgba(255,255,255,.05));
+  border-bottom:1px solid rgba(255,255,255,.15);flex:none;
+}
+.xp-brand{display:flex;align-items:center;gap:14px}
+.xp-logo{width:40px;height:40px;display:grid;grid-template-columns:1fr 1fr;gap:3px;flex:none}
+.xp-logo span{border-radius:2px}
+.xp-logo span:nth-child(1){background:#e83030}
+.xp-logo span:nth-child(2){background:#4caf50}
+.xp-logo span:nth-child(3){background:#2979ff}
+.xp-logo span:nth-child(4){background:#ffca28}
+.xp-title{color:#fff;font-size:26px;font-weight:300;letter-spacing:1px;font-family:var(--ui);text-shadow:1px 1px 4px rgba(0,0,0,.4)}
+.xp-title b{font-weight:700}
+.xp-sub{color:rgba(255,255,255,.65);font-family:var(--mono);font-size:11px;letter-spacing:2px;text-align:right}
+.xp-instr{color:rgba(255,255,255,.88);font-size:16px;font-weight:300;text-align:center;
+  padding:30px 0 18px;letter-spacing:.2px;text-shadow:1px 1px 4px rgba(0,0,0,.4);flex:none}
+.xp-users{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.xp-user{display:flex;align-items:center;gap:18px;width:480px;max-width:90vw;
+  padding:14px 24px;cursor:pointer;border-radius:12px;transition:background .15s;position:relative}
+.xp-user:hover{background:rgba(255,255,255,.12)}
+.xp-user:hover .xp-arrow{opacity:1;transform:translateX(0)}
+.xp-av{width:64px;height:64px;border:3px solid rgba(255,255,255,.65);border-radius:8px;
+  background:linear-gradient(135deg,#0d4f6e,#0a8a8a 50%,#19a019);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:20px;
+  color:#cffcfc;flex:none;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.xp-av img{width:100%;height:100%;object-fit:cover}
+.xp-uinfo{flex:1}
+.xp-uname{color:#fff;font-size:20px;font-weight:600;text-shadow:1px 1px 3px rgba(0,0,0,.5)}
+.xp-urole{color:rgba(200,230,240,.75);font-size:12px;font-family:var(--mono);
+  letter-spacing:1.5px;text-transform:uppercase;margin-top:3px}
+.xp-arrow{width:34px;height:34px;background:rgba(255,255,255,.15);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;opacity:0;transform:translateX(-8px);
+  transition:opacity .2s,transform .2s;color:#fff;font-size:22px;border:1px solid rgba(255,255,255,.3)}
+.xp-bot{display:flex;justify-content:space-between;align-items:center;padding:10px 48px;
+  background:linear-gradient(90deg,rgba(255,255,255,.04),rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border-top:1px solid rgba(255,255,255,.18);flex:none}
+.xp-bot span{color:rgba(255,255,255,.5);font-family:var(--mono);font-size:11px;letter-spacing:1px}
+.xp-loading{position:absolute;inset:0;z-index:10;background:rgba(22,61,122,.95);
+  display:none;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+.xp-loading.on{display:flex;animation:fadeIn .2s ease-out}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.xp-loading p{color:#fff;font-size:17px;font-weight:300;letter-spacing:.3px}
+.xp-bar-track{width:200px;height:7px;background:rgba(0,0,0,.35);border-radius:4px;overflow:hidden}
+.xp-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#4fc3f7,#b3e5fc);
+  border-radius:4px;animation:xpload 1.8s ease-in-out forwards}
+@keyframes xpload{0%{width:0%}60%{width:72%}85%{width:90%}100%{width:100%}}
+#login.out{animation:lgOut .5s ease-in forwards}
+@keyframes lgOut{to{opacity:0}}
+
+#hint{position:fixed;bottom:calc(var(--tb-h) + 10px);left:50%;transform:translateX(-50%);
+  background:rgba(20,40,80,.85);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);
+  color:#fff;border-radius:10px;padding:10px 18px 10px 14px;font-size:12.5px;
+  display:flex;align-items:center;gap:10px;white-space:nowrap;z-index:var(--z-popup);
+  opacity:0;pointer-events:none;transition:opacity .3s}
+#hint.on{opacity:1;pointer-events:auto}
+#hint-x{background:none;border:none;color:rgba(255,255,255,.6);font-size:16px;cursor:pointer;padding:0 2px}
+#hint-x:hover{color:#fff}
+
+#player-popup{width:300px;right:6px;bottom:calc(var(--tb-h) + 8px);position:fixed}
+.player-note{font-size:11px;color:var(--muted);line-height:1.4}
+
+.sep{height:1px;background:rgba(0,0,0,.08);margin:12px 0}
+.win-status{padding:5px 12px;background:rgba(0,0,0,.04);border-top:1px solid rgba(0,0,0,.06);
+  font-size:11px;color:var(--muted);flex:none}
+
+@media(max-width:700px){
+  .win.open{inset:4px 4px auto!important;left:4px!important;top:4px!important;
+    width:calc(100vw - 8px)!important;max-height:calc(100vh - var(--tb-h) - 12px);overflow:hidden}
+  .icons-grid{flex-direction:row;flex-wrap:wrap;max-height:none;padding:10px}
+  #startmenu{width:100%;border-radius:0}
+  .xp-user{width:90vw}
+  .xp-top,.xp-bot{padding:12px 16px}
+  .proj-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001s!important;transition-duration:.001s!important}
+}
 </style>
 </head>
 <body>
 
-<div class="sr-only">
-  <h1>Nathalia Gomes Felipe: Analista de Infraestrutura, Segurança e Desenvolvedora</h1>
-  <p>Portfolio de Nathalia Gomes Felipe: analista de infraestrutura, seguranca e desenvolvedora em Santa Catarina, Brasil. Especialista em Linux hardening (RHEL/CentOS/Rocky, SELinux enforcing, CIS/STIG, nftables, auditd), pentest e analise de vulnerabilidades (Nmap, Nessus, OpenVAS, Nuclei, Trivy, Burp Suite), threat hunting e incident response (MITRE ATT&CK, OSINT, CVSS, Suricata, Snort, Zeek, Wazuh), redes e VoIP (SIP, MPLS, VLAN, IPsec, WireGuard, Wireshark), DevSecOps (GitHub Actions, GitLab CI, SAST/DAST, Docker, Ansible) e monitoramento (Zabbix, Splunk, ELK, Grafana, Prometheus). Projetos publicados: linuxwiki, wikinet (RedesWiki), docker-security-scanner, secrets-scanner, Helpdesk, threat-intel-dashboard.</p>
-  <ul>
-    <li><a href="mailto:nathaliagomessfelipe@gmail.com">E-mail</a></li>
-    <li><a href="https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9">LinkedIn</a></li>
-    <li><a href="https://github.com/NathaliaGF">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9">LinkedIn (perfil profissional)</a></li>
-  </ul>
-  <h2>Projetos</h2>
-  <ul>
-    <li><a href="https://nathaliagf.github.io/linuxwiki/">linuxwiki: wiki educacional de Linux</a></li>
-    <li><a href="https://nathaliagf.github.io/wikinet/">wikinet: wiki de redes, TCP/IP, DNS, IPv6</a></li>
-    <li><a href="https://github.com/NathaliaGF/docker-security-scanner">docker-security-scanner: auditoria de Dockerfiles</a></li>
-    <li><a href="https://github.com/NathaliaGF/secrets-scanner">secrets-scanner: deteccao de credenciais expostas</a></li>
-    <li><a href="https://github.com/NathaliaGF/Helpdesk">Helpdesk: sistema de tickets com RBAC</a></li>
-    <li><a href="https://github.com/NathaliaGF/threat-intel-dashboard">threat-intel-dashboard: painel de threat intelligence</a></li>
-  </ul>
-</div>
+<div id="wallpaper"><div id="clouds"></div></div>
 
-<noscript><style>body{overflow:auto;background:#c0c0c0;font-family:Tahoma,sans-serif;padding:30px}#boot,#desktop,#taskbar,#startmenu,#shutdown{display:none!important}.nsfb{max-width:560px;margin:0 auto;background:#fff;border:2px solid #000;padding:24px}.nsfb h1{font-size:18px;margin-bottom:14px}.nsfb p{margin-bottom:10px}.nsfb a{color:#000080}</style>
-<div class="nsfb"><h1>Nathalia Gomes Felipe: Analista de Infraestrutura, Segurança e Desenvolvedora</h1><p>Este portfólio interativo requer JavaScript. Você pode me encontrar nos links abaixo:</p><ul><li><a href="mailto:nathaliagomessfelipe@gmail.com">nathaliagomessfelipe@gmail.com</a></li><li><a href="https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9">LinkedIn</a></li><li><a href="https://github.com/NathaliaGF">GitHub</a></li></ul></div></noscript>
-
-<!-- BOOT -->
-<div id="boot"><span id="boottext"></span>
-<div id="bootprog" style="position:absolute;bottom:34px;left:26px;right:26px">
-  <div style="font-family:var(--crt);font-size:16px;color:var(--green);margin-bottom:6px" id="bootprogLabel">Iniciando...</div>
-  <div style="height:14px;background:#001a00;border:1px solid var(--green);position:relative;overflow:hidden">
-    <div id="bootbar" style="height:100%;width:0%;background:var(--green);box-shadow:0 0 6px var(--green);transition:width .18s ease"></div>
-  </div>
-</div>
-<span class="skip" data-i18n="boot.skip">clique para pular ▸</span></div>
-
-<!-- DESKTOP -->
 <div id="desktop">
-  <div class="wm">NathaliaOS</div>
-  <div class="desktop-id">
-    <div class="nm">Nathalia Gomes Felipe</div>
-    <div class="rl" data-i18n="id.role">Infra · Segurança · Desenvolvedora</div>
-    <div class="q">
-      <a id="id-cv" href="https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9" target="_blank" rel="noopener" data-i18n="id.cv">⬇ Curriculo (PDF)</a>
-      <a id="id-ct" href="#" role="button" data-i18n="id.contact">✉ Contato</a>
+  <div class="icons-grid" id="icons-grid"></div>
+</div>
+
+<section class="win" id="win-about" style="top:60px;left:160px;width:520px">
+  <div class="titlebar"><span class="ticon">👤</span><span class="tname" data-i18n="w.about">Sobre</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min" aria-label="Minimizar"></button><button class="tbtn mx" data-act="max" aria-label="Maximizar"></button><button class="tbtn cl" data-act="close" aria-label="Fechar"></button></div></div>
+  <div class="menubar"><span data-mb="winver" data-i18n="mb.about">Sobre o sistema</span></div>
+  <div class="wbody">
+    <div class="about-card">
+      <div class="about-avatar" id="about-av"><img src="foto.jpg" alt="NGF" onerror="this.style.display='none'">NGF</div>
+      <div>
+        <div class="about-name">Nathalia Gomes Felipe</div>
+        <div class="about-role" data-i18n="about.role">Analista de Infraestrutura · Segurança · Dev</div>
+        <div class="about-loc">📍 Brasil · SC</div>
+      </div>
+    </div>
+    <div class="about-bio" data-i18n="about.bio">Especialista em infraestrutura Linux, segurança defensiva e desenvolvimento de ferramentas. Mantenho sistemas críticos no ar, endurecidos e observáveis; construo as ferramentas que avisam quando algo quebra.</div>
+    <div class="about-favs" id="about-favs"></div>
+    <button class="about-btn" id="btn-winver">🖥️ <span data-i18n="about.sysinfo">Sobre o Sistema</span></button>
+  </div>
+</section>
+
+<section class="win" id="win-winver" style="top:140px;left:340px;width:360px">
+  <div class="titlebar"><span class="ticon">🖥️</span><span class="tname">winver</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn cl" data-act="close"></button></div></div>
+  <div class="wbody">
+    <div class="winver-body">
+      <div class="winver-logo">🪟</div>
+      <div class="winver-title">NathaliaOS Portfolio Edition</div>
+      <div class="winver-sub">Versão 2.0 · Build 2026</div>
+      <div class="sep"></div>
+      <div style="font-size:13px;color:var(--muted)">Feito com ❤️ por Nathalia Gomes Felipe<br><br>Brasil · SC</div>
     </div>
   </div>
-  <div class="icons" id="icons"></div>
+</section>
 
-  <!-- WINDOWS -->
-  <!-- About -->
-  <section class="win" id="win-about" style="top:54px;left:120px;width:560px">
-    <div class="title"><span class="ticon" data-svg="user"></span><span class="tname" data-i18n="about.title">Sobre</span>
-      <div class="tbtns"><div class="tbtn" data-act="min">_</div><div class="tbtn" data-act="max">□</div><div class="tbtn" data-act="close">✕</div></div></div>
-    <div class="menubar"><span data-mb="close" title="Fechar esta janela"><u>A</u>rquivo ✕</span><span data-mb="help"><u>A</u>juda</span></div>
-    <div class="wbody">
-      <div class="about-row">
-        <div class="avatar"><div class="pic"><img class="pic-img" src="foto.jpg" alt="Foto de Nathalia Gomes Felipe" onerror="this.style.display='none'"><span class="pic-mono">NGF</span></div><div class="cap" data-i18n="about.cap">infra · seg · dev</div></div>
-        <div>
-          <h2 class="win-h">Nathalia Gomes Felipe</h2>
-          <p class="lead" data-i18n="about.lead">Analista de infraestrutura, segurança e desenvolvedora. Mantenho sistemas críticos no ar, endurecidos e observáveis; construo as ferramentas que avisam quando algo quebra.</p>
-        </div>
-      </div>
-      <hr class="div">
-      <p data-i18n="about.p1">Atua no lado técnico da segurança: threat hunting com MITRE ATT&CK, análise de vulnerabilidades (Nmap, Nessus, Nuclei, Trivy), resposta a incidentes, IDS/IPS com Suricata e Zeek, e OSINT. Pratica pentest em labs (HTB, TryHackMe) e aplica pipelines DevSecOps com SAST/DAST em CI/CD.</p>
-      <p data-i18n="about.p2">Em produção, administra Linux (RHEL/CentOS/Rocky) com SELinux em modo enforcing, nftables, auditd e hardening CIS/STIG; mantém VPNs (IPsec, WireGuard), redes VLAN/MPLS e VoIP em Asterisk/FreePBX. Monitora com Zabbix, Splunk e Grafana. Desenvolve CLIs de segurança em Python, automatiza com Bash e Ansible e mantém pipelines CI/CD no GitHub Actions e GitLab CI.</p>
-      <p class="muted" data-i18n="about.p3">Cursando Sistemas de Informação (especialização em cibersegurança) + técnico pelo SENAI/SC.</p>
-      <hr class="div">
-      <div class="creds">
-        <h3 data-i18n="about.eduh">Formação &amp; estudo contínuo</h3>
-        <p class="muted" data-i18n="about.edu1">Bacharelado em Sistemas de Informação, especialização em cibersegurança (Estácio).</p>
-        <p class="muted" data-i18n="about.edu2">Técnico em Desenvolvimento de Sistemas, SENAI/SC.</p>
-        <div class="badges"><span class="lbl" data-i18n="about.learn">Estudando:</span><span>Hack The Box</span><span>TryHackMe</span><span>Network+ / CCNA</span></div>
-      </div>
+<section class="win" id="win-proj" style="top:50px;left:220px;width:640px">
+  <div class="titlebar"><span class="ticon">📁</span><span class="tname" data-i18n="w.proj">Projetos</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+  <div class="wbody"><div class="proj-grid" id="proj-grid"></div></div>
+</section>
+
+<section class="win" id="win-ars" style="top:70px;left:180px;width:560px">
+  <div class="titlebar"><span class="ticon">🛡️</span><span class="tname" data-i18n="w.ars">Arsenal técnico</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+  <div class="wbody">
+    <div class="ars-tabs" id="ars-tabs"></div>
+    <div id="ars-panels"></div>
+  </div>
+</section>
+
+<section class="win" id="win-xp" style="top:60px;left:200px;width:560px">
+  <div class="titlebar"><span class="ticon">📋</span><span class="tname" data-i18n="w.xp">Experiência</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+  <div class="wbody"><div class="timeline" id="timeline"></div></div>
+</section>
+
+<section class="win" id="win-term" style="top:80px;left:240px;width:580px">
+  <div class="titlebar"><span class="ticon">💻</span><span class="tname">Terminal: nathalia@nathaliaos</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+  <div class="wbody">
+    <div class="term-out" id="term-out"></div>
+    <div class="term-in-row"><span class="term-prompt">nathalia@nathaliaos:~$</span><input class="term-input" id="term-input" autocomplete="off" spellcheck="false" aria-label="Terminal input"/></div>
+  </div>
+</section>
+
+<section class="win" id="win-contact" style="top:90px;left:260px;width:400px">
+  <div class="titlebar"><span class="ticon">✉️</span><span class="tname" data-i18n="w.ct">Contato</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn cl" data-act="close"></button></div></div>
+  <div class="wbody">
+    <div class="contact-lead" data-i18n="ct.lead">Aberta a vagas de Security Analyst, Infra, SOC, Pentest e DevSecOps.</div>
+    <div class="ct-links" id="ct-links"></div>
+  </div>
+</section>
+
+<section class="win" id="win-ie" style="top:50px;left:140px;width:600px">
+  <div class="titlebar"><span class="ticon">🌐</span><span class="tname">Internet: NathaliaOS</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+  <div class="ie-bar">
+    <button class="ie-back">◀</button><button class="ie-fwd">▶</button>
+    <span class="ie-url">https://linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9</span>
+    <button class="ie-go" id="ie-go">Ir</button>
+  </div>
+  <div class="wbody" style="padding:0">
+    <div class="ie-content">
+      <div class="ie-logo">🌐</div>
+      <div class="ie-title">Internet</div>
+      <div class="ie-sub" data-i18n="ie.sub">Clique para visitar o LinkedIn de Nathalia em uma nova aba.</div>
+      <button class="ie-btn" id="ie-open" data-i18n="ie.btn">Abrir LinkedIn</button>
+      <div style="margin-top:12px;font-size:11.5px;color:var(--muted)" data-i18n="ie.note">⚠️ Esta versão não é mais compatível com o sistema.</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Projects -->
-  <section class="win" id="win-proj" style="top:80px;left:200px;width:600px">
-    <div class="title"><span class="ticon" data-svg="folder"></span><span class="tname" data-i18n="proj.title">Projetos</span>
-      <div class="tbtns"><div class="tbtn" data-act="min">_</div><div class="tbtn" data-act="max">□</div><div class="tbtn" data-act="close">✕</div></div></div>
-    <div class="toolbar"><span class="raise" style="padding:3px 8px" data-i18n="proj.path">📁 C:\Nathalia\projetos</span></div>
-    <div class="wbody">
-      <div class="files" id="files"></div>
-      <div class="statusbar raise"><span id="filecount"></span><span data-i18n="proj.hint">● = publicado ao vivo</span></div>
+<section class="win" id="win-computer" style="top:55px;left:170px;width:480px">
+  <div class="titlebar"><span class="ticon">🖥️</span><span class="tname" data-i18n="w.comp">Meu PC</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+  <div class="wbody">
+    <div style="font-size:12px;color:var(--muted);margin-bottom:12px" data-i18n="comp.sub">Clique duas vezes em uma pasta para abrir</div>
+    <div class="explorer-grid" id="explorer-grid"></div>
+  </div>
+  <div class="win-status" data-i18n="comp.status">5 objeto(s)</div>
+</section>
+
+<section class="win" id="win-trash" style="top:100px;left:280px;width:380px">
+  <div class="titlebar"><span class="ticon">🗑️</span><span class="tname" data-i18n="w.trash">Lixeira</span>
+    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn cl" data-act="close"></button></div></div>
+  <div class="wbody">
+    <div class="trash-body">
+      <div class="trash-ico">🗑️</div>
+      <div class="trash-msg" data-i18n="trash.msg">A lixeira está vazia.</div>
+      <div class="trash-sub" data-i18n="trash.sub">"Assim como os bugs em produção (ou pelo menos espero 😂)"<br><br>rm -rf /bugs 2>/dev/null</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Arsenal -->
-  <section class="win" id="win-ars" style="top:100px;left:150px;width:520px">
-    <div class="title"><span class="ticon" data-svg="shield"></span><span class="tname" data-i18n="ars.title">Arsenal técnico: propriedades</span>
-      <div class="tbtns"><div class="tbtn" data-act="min">_</div><div class="tbtn" data-act="max">□</div><div class="tbtn" data-act="close">✕</div></div></div>
-    <div class="menubar"><span data-mb="close" title="Fechar esta janela"><u>A</u>rquivo ✕</span><span data-mb="help"><u>A</u>juda</span></div>
-    <div class="wbody">
-      <div class="tabs" id="arstabs"></div>
-      <div id="arspanels"></div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="win" id="win-xp" style="top:70px;left:240px;width:580px">
-    <div class="title"><span class="ticon" data-svg="chart"></span><span class="tname" data-i18n="xp.title">Experiência</span>
-      <div class="tbtns"><div class="tbtn" data-act="min">_</div><div class="tbtn" data-act="max">□</div><div class="tbtn" data-act="close">✕</div></div></div>
-    <div class="wbody">
-      <div class="xpitem"><div class="when" data-i18n="xp.w1">2023 até hoje · <span class="org">Dígitro Tecnologia</span></div>
-        <div style="font-weight:bold" data-i18n="xp.r1">Analista de Suporte Técnico II</div>
-        <div class="ds" data-i18n="xp.d1">Administra ambientes Linux (RHEL/CentOS) em produção para serviços de missão crítica, respondendo a incidentes N2/N3. Aplica hardening conforme CIS Benchmarks com SELinux em modo enforcing e nftables; mantém monitoramento proativo via Zabbix com templates e triggers customizados. Conduz análise de causa raiz de incidentes recorrentes e gerencia infraestrutura VoIP em Asterisk/FreePBX com diagnóstico de tráfego SIP via Wireshark.</div></div>
-      <hr class="div">
-      <div class="xpitem"><div class="when" data-i18n="xp.w2">2022 a 2023 · <span class="org">Secretaria de Saúde · SC</span></div>
-        <div style="font-weight:bold" data-i18n="xp.r2">Suporte Técnico N1 & Dados</div>
-        <div class="ds" data-i18n="xp.d2">Estruturou e gerenciou bases de dados institucionais de saúde pública; desenvolveu dashboards interativos no Power BI com DAX e integração de múltiplas fontes via ODBC/JDBC para apoio à tomada de decisão. Prestou suporte técnico N1 e conduziu iniciativas de governança da informação com os usuários internos.</div></div>
-      <hr class="div">
-      <div class="xpitem"><div class="when" data-i18n="xp.w3">2021, 11 meses · <span class="org">FIESC</span></div>
-        <div style="font-weight:bold" data-i18n="xp.r3">Assistente Administrativa</div>
-        <div class="ds" data-i18n="xp.d3">Atuou em rotinas de RH: admissões, gestão de registros funcionais, elaboração de relatórios e criação de materiais para reuniões e apresentações.</div></div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="win" id="win-contact" style="top:120px;left:260px;width:440px">
-    <div class="title"><span class="ticon" data-svg="mail"></span><span class="tname" data-i18n="ct.title">Contato</span>
-      <div class="tbtns"><div class="tbtn" data-act="min">_</div><div class="tbtn" data-act="max">□</div><div class="tbtn" data-act="close">✕</div></div></div>
-    <div class="wbody">
-      <div class="dlg-row"><div class="dlg-ic">✉</div><p data-i18n="ct.lead">Aberta a vagas de Security Analyst, Infra, SOC, Pentest, DevSecOps e GRC. Vamos conversar?</p></div>
-      <div class="btnrow">
-        <a class="b98" href="mailto:nathaliagomessfelipe@gmail.com" title="Enviar e-mail"><b>@</b> nathaliagomessfelipe@gmail.com ↗</a>
-        <a class="b98" href="https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9" target="_blank" rel="noopener" title="Abrir LinkedIn (nova aba)"><b>in</b> LinkedIn ↗</a>
-        <a class="b98" href="https://github.com/NathaliaGF" target="_blank" rel="noopener" title="Abrir GitHub (nova aba)"><b>&gt;_</b> github.com/NathaliaGF ↗</a>
-        <a class="b98" href="https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9" target="_blank" rel="noopener" title="Abre no LinkedIn"><b>in</b> <span data-i18n="ct.cv">Ver perfil completo no LinkedIn</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Terminal -->
-  <section class="win" id="win-term" style="top:150px;left:300px;width:520px">
-    <div class="title"><span class="ticon" data-svg="term"></span><span class="tname">C:\&gt; nathalia.exe</span>
-      <div class="tbtns"><div class="tbtn" data-act="min">_</div><div class="tbtn" data-act="max">□</div><div class="tbtn" data-act="close">✕</div></div></div>
-    <div class="wbody"><div class="term" id="termtext"></div></div>
-  </section>
-
-  <!-- Preview (proof) -->
-  <section class="win" id="win-preview" style="top:60px;left:170px;width:700px">
-    <div class="title"><span class="ticon" data-svg="link"></span><span class="tname" id="prevtitle" data-i18n="prev.title">Pré-visualização</span>
-      <div class="tbtns"><div class="tbtn" data-act="min">_</div><div class="tbtn" data-act="max">□</div><div class="tbtn" data-act="close">✕</div></div></div>
-    <div class="wbody">
-      <div id="prevbar"><span data-i18n="prev.note">Os projetos ao vivo abrem em nova aba (iframes são bloqueados pelos servidores).</span><a id="prevopen" href="#" target="_blank" rel="noopener" data-i18n="prev.open">Abrir projeto ↗</a></div>
-      <div id="prevthumb" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:38vh;gap:18px;font-family:var(--crt);font-size:22px;color:var(--sh)">
-        <span>📁</span><span id="prevname" style="color:#000080"></span>
-        <a id="prevbig" href="#" target="_blank" rel="noopener" style="font-size:14px;color:#00309e" data-i18n="prev.open2">Abrir ao vivo ↗</a>
-      </div>
-    </div>
-  </section>
+<div class="tray-popup" id="popup-battery" style="right:80px;bottom:calc(var(--tb-h) + 8px)">
+  <div class="popup-title" data-i18n="bat.title">Status da Bateria</div>
+  <div class="popup-item">🔋 <b>100%</b></div>
+  <div class="popup-item" style="color:var(--muted);font-size:12px" data-i18n="bat.msg">100% online. Sem interrupções previstas.</div>
 </div>
 
-<!-- ONBOARDING HINT -->
-<div id="hint">
-  <b data-i18n="hint.t">👋 Bem-vindo(a) à NathaliaOS</b>
-  <span data-i18n="hint.b">Dê dois cliques nos ícones para abrir as janelas. Arraste-as pela barra de título. Use o menu Iniciar para navegar.</span>
-  <span class="x" onclick="hideHint()" data-i18n="hint.x">Entendi ✕</span>
+<div class="tray-popup" id="popup-wifi" style="right:110px;bottom:calc(var(--tb-h) + 8px)" onclick="event.stopPropagation()">
+  <div class="popup-title" data-i18n="wifi.title">Redes encontradas</div>
+  <div class="popup-net">📶 DÚVIDOVOCÊACERTARASENHA</div>
+  <div class="popup-pw-note" data-i18n="wifi.pw">Senha: <b>[ oculta ]</b></div>
+  <button class="popup-btn" id="wifi-try-btn" data-i18n="wifi.btn">🔑 Tentar descobrir</button>
+  <div id="wifi-challenge" style="display:none;margin-top:10px">
+    <div style="font-size:12px;color:var(--muted);margin-bottom:6px" data-i18n="wifi.enter">Digite a senha:</div>
+    <div style="display:flex;gap:6px;margin-bottom:6px">
+      <input id="wifi-pw-input" type="password" placeholder="senha..." autocomplete="off"
+        style="flex:1;padding:6px 8px;border:1.5px solid rgba(0,0,120,.2);border-radius:6px;font-size:12px;outline:none;font-family:var(--mono);background:#fff;color:#334">
+      <button id="wifi-pw-go" style="background:var(--xp-blue);color:#fff;border:none;border-radius:6px;padding:6px 10px;font-size:12px;cursor:pointer;font-weight:600">OK</button>
+    </div>
+    <div id="wifi-feedback" style="font-size:11.5px;min-height:16px"></div>
+  </div>
 </div>
 
-<!-- START MENU -->
-<div id="startmenu">
-  <div class="band">Nathalia<b>OS</b></div>
-  <div class="items" id="startitems"></div>
+<div class="tray-popup" id="player-popup" style="right:6px;bottom:calc(var(--tb-h) + 8px);width:280px">
+  <div class="popup-title">🎵 Player</div>
+  <div class="player-note" data-i18n="player.note">Player de música disponível em breve.<br>Em construção 🎧</div>
 </div>
 
-<!-- TASKBAR -->
 <div id="taskbar">
-  <div id="start" data-svg-prepend="logo"><span data-i18n="start">Iniciar</span></div>
-  <div class="tasks" id="tasks"></div>
-  <div class="tray"><span class="lock" title="Conexão segura">🔒</span><span id="helpbtn" role="button" tabindex="0" title="Ajuda" style="cursor:pointer;padding:2px 5px;box-shadow:inset -1px -1px #000,inset 1px 1px var(--hi),inset -2px -2px var(--sh),inset 2px 2px var(--lt);font-weight:bold;font-size:11px">?</span><span id="langbtn" role="button" tabindex="0" title="Português / English">PT</span><span id="clock">--:--</span></div>
+  <button id="start-btn">
+    <div class="sb-logo"><span></span><span></span><span></span><span></span></div>
+    <span data-i18n="tb.start">Iniciar</span>
+  </button>
+  <div id="tasks"></div>
+  <div id="tray">
+    <button class="tray-btn" id="btn-player" title="Música">🎵</button>
+    <button class="tray-btn" id="btn-wifi" title="Wi-Fi">📶</button>
+    <button class="tray-btn" id="btn-bat" title="Bateria">🔋</button>
+    <button class="tray-btn" id="btn-lang" title="Idioma">PT</button>
+    <div id="clock-display">--:--</div>
+  </div>
 </div>
 
-<!-- SHUTDOWN -->
-<div id="shutdown">
-  <div class="msg" data-i18n="shut.msg">É seguro desligar o computador.</div>
-  <button id="reboot" data-i18n="shut.reboot">Ligar novamente</button>
+<div id="startmenu">
+  <div class="sm-header">
+    <div class="sm-av"><img src="foto.jpg" alt="NGF" onerror="this.style.display='none'">NGF</div>
+    <div><div class="sm-name">Nathalia Gomes</div><div class="sm-role" data-i18n="sm.role">Infra · Segurança · Dev</div></div>
+  </div>
+  <div class="sm-body" id="sm-body"></div>
+  <div class="sm-sep"></div>
+  <div class="sm-footer">
+    <button class="sm-foot-btn" id="sm-lock">🔒 <span data-i18n="sm.lock">Bloquear</span></button>
+    <button class="sm-foot-btn" id="sm-restart">🔄 <span data-i18n="sm.restart">Reiniciar</span></button>
+    <button class="sm-foot-btn" id="sm-shut">⏻ <span data-i18n="sm.shut">Desligar</span></button>
+  </div>
 </div>
+
+<div id="hint">
+  <span>👋</span>
+  <span id="hint-text" data-i18n="hint.msg">Bem-vindo(a) ao NathaliaOS! Clique duas vezes nos ícones para explorar.</span>
+  <button id="hint-x">✕</button>
+</div>
+
+<div id="login">
+  <div class="xp-top">
+    <div class="xp-brand">
+      <div class="xp-logo"><span></span><span></span><span></span><span></span></div>
+      <div class="xp-title"><b>Nathalia</b>OS</div>
+    </div>
+    <div class="xp-sub">v2.0 · Security Edition</div>
+  </div>
+  <div class="xp-instr" data-i18n="login.instr">Para começar, clique em seu nome de usuário</div>
+  <div class="xp-users">
+    <div class="xp-user" id="login-user" role="button" tabindex="0">
+      <div class="xp-av"><img src="foto.jpg" alt="NGF" onerror="this.style.display='none'">NGF</div>
+      <div class="xp-uinfo">
+        <div class="xp-uname">Nathalia Gomes Felipe</div>
+        <div class="xp-urole" data-i18n="login.role">Infra · Segurança · Dev</div>
+      </div>
+      <div class="xp-arrow">›</div>
+    </div>
+  </div>
+  <div class="xp-bot">
+    <span>NathaliaOS v2.0</span>
+    <span>© 2026 Nathalia Gomes Felipe</span>
+  </div>
+  <div class="xp-loading" id="xp-loading">
+    <p data-i18n="login.loading">Carregando configurações pessoais...</p>
+    <div class="xp-bar-track"><div class="xp-bar-fill"></div></div>
+  </div>
+</div>
+
+<noscript>
+<style>body{overflow:auto;background:#c0c0c0;padding:30px}#login,#taskbar,#desktop,#wallpaper{display:none!important}</style>
+<div style="max-width:520px;margin:0 auto;background:#fff;padding:24px;border:2px solid #000">
+  <h1 style="font-size:18px;margin-bottom:12px">Nathalia Gomes Felipe, Analista de Infraestrutura, Segurança e Dev</h1>
+  <p>Este portfólio requer JavaScript.</p>
+  <ul style="margin:12px 0 0 18px;line-height:2">
+    <li><a href="mailto:nathaliagomessfelipe@gmail.com">nathaliagomessfelipe@gmail.com</a></li>
+    <li><a href="https://linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9">LinkedIn</a></li>
+    <li><a href="https://github.com/NathaliaGF">GitHub</a></li>
+  </ul>
+</div>
+</noscript>
 
 <script>
-/* ---------- icon SVGs (flat 16-color style) ---------- */
-var SVG = {
-  user:'<svg viewBox="0 0 32 32"><rect width="32" height="32" fill="none"/><circle cx="16" cy="11" r="6" fill="#f4c89b" stroke="#000"/><path d="M5 30c1-8 7-10 11-10s10 2 11 10z" fill="#3b5bd6" stroke="#000"/></svg>',
-  folder:'<svg viewBox="0 0 32 32"><path d="M3 8h9l3 3h14v16H3z" fill="#f6d34a" stroke="#000"/><path d="M3 11h26v16H3z" fill="#ffe071" stroke="#000"/></svg>',
-  shield:'<svg viewBox="0 0 32 32"><path d="M16 3l11 4v8c0 8-5 12-11 14C10 27 5 23 5 15V7z" fill="#8fb6e8" stroke="#000"/><path d="M16 3l11 4v8c0 8-5 12-11 14z" fill="#5e87c9" stroke="#000"/><path d="M11 16l4 4 7-8" fill="none" stroke="#fff" stroke-width="2.4"/></svg>',
-  chart:'<svg viewBox="0 0 32 32"><rect x="3" y="3" width="26" height="26" fill="#fff" stroke="#000"/><rect x="7" y="16" width="4" height="9" fill="#3b5bd6"/><rect x="14" y="10" width="4" height="15" fill="#19a019"/><rect x="21" y="6" width="4" height="19" fill="#d63b3b"/></svg>',
-  mail:'<svg viewBox="0 0 32 32"><rect x="3" y="7" width="26" height="18" fill="#fff" stroke="#000"/><path d="M3 7l13 10L29 7" fill="none" stroke="#000"/></svg>',
-  term:'<svg viewBox="0 0 32 32"><rect x="3" y="4" width="26" height="24" fill="#000" stroke="#808080"/><text x="7" y="20" fill="#19e019" font-family="monospace" font-size="13">&gt;_</text></svg>',
-  link:'<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="#2aa3d6" stroke="#000"/><path d="M3 16h26M16 3c5 4 5 22 0 26M16 3c-5 4-5 22 0 26" fill="none" stroke="#fff"/></svg>',
-  logo:'<svg viewBox="0 0 32 32"><rect x="2" y="2" width="13" height="13" fill="#d63b3b"/><rect x="17" y="2" width="13" height="13" fill="#19a019"/><rect x="2" y="17" width="13" height="13" fill="#2f6fd6"/><rect x="17" y="17" width="13" height="13" fill="#e8b30c"/></svg>',
-  doc:'<svg viewBox="0 0 32 32"><path d="M7 3h13l6 6v20H7z" fill="#fff" stroke="#000"/><path d="M20 3v6h6" fill="#cfd6d6" stroke="#000"/><path d="M11 16h11M11 20h11M11 24h8" stroke="#3b5bd6"/></svg>'
+var DATA = {
+  favTechs:['Python','Bash','SELinux','Zabbix','Docker','Nmap','Wireshark','MITRE ATT&CK','PostgreSQL'],
+  projects:[
+    {id:'linuxwiki',thumb:'📚',thumbCls:'',name:'linuxwiki',live:'https://nathaliagf.github.io/linuxwiki/',repo:'https://github.com/NathaliaGF/linuxwiki',
+     descPT:'Wiki educacional de Linux: 14 módulos, terminal interativo, flashcards SM-2 e PWA offline.',
+     descEN:'Educational Linux wiki: 14 modules, interactive terminal, SM-2 flashcards and offline PWA.',
+     techs:['HTML','CSS','JS','PWA']},
+    {id:'wikinet',thumb:'🌐',thumbCls:'net',name:'wikinet (RedesWiki)',live:'https://nathaliagf.github.io/wikinet/',repo:'https://github.com/NathaliaGF/wikinet',
+     descPT:'RedesWiki: aprenda redes do zero ao CCNA. TCP/IP, DNS, IPv6, simuladores e flashcards.',
+     descEN:'RedesWiki: learn networking from zero to CCNA. TCP/IP, DNS, IPv6, simulators and flashcards.',
+     techs:['JavaScript','HTML','PWA']},
+    {id:'docker-scanner',thumb:'🐳',thumbCls:'sec',name:'docker-security-scanner',repo:'https://github.com/NathaliaGF/docker-security-scanner',
+     descPT:'CLI que audita docker-compose.yml e Dockerfiles em busca de configurações inseguras.',
+     descEN:'CLI that audits docker-compose.yml and Dockerfiles for security misconfigurations.',
+     techs:['Python','Docker','Security']},
+    {id:'secrets-scanner',thumb:'🔑',thumbCls:'sec',name:'secrets-scanner',repo:'https://github.com/NathaliaGF/secrets-scanner',
+     descPT:'Varre arquivos, diretórios e histórico Git em busca de credenciais e chaves expostas.',
+     descEN:'Scans files, directories and Git history for exposed credentials and API keys.',
+     techs:['Python','Git','Security']},
+    {id:'helpdesk',thumb:'🎫',thumbCls:'data',name:'Helpdesk',repo:'https://github.com/NathaliaGF/Helpdesk',
+     descPT:'Sistema interno de tickets com controle de acesso por papel, dashboards e automação.',
+     descEN:'Internal ticketing system with role-based access, dashboards and automation.',
+     techs:['Node.js','PostgreSQL','Docker']},
+    {id:'threat-intel',thumb:'🕵️',thumbCls:'sec',name:'threat-intel-dashboard',repo:'https://github.com/NathaliaGF/threat-intel-dashboard',
+     descPT:'Painel para coletar e visualizar indicadores de threat intelligence.',
+     descEN:'Dashboard to collect and visualize threat intelligence indicators.',
+     techs:['JavaScript','Security']}
+  ],
+  arsenal:[
+    {keyPT:'Linguagens',keyEN:'Languages',items:['Python','Bash','AWK/Sed','PowerShell','JavaScript','SQL','Regex','Git']},
+    {keyPT:'Segurança',keyEN:'Security',items:['MITRE ATT&CK','OWASP Top 10','Threat Hunting','Incident Response','OSINT','CVSS Scoring','CVE Triage','Patch Management','NIST CSF','Zero Trust','Defense in Depth']},
+    {keyPT:'Pentest & Análise',keyEN:'Pentest & Analysis',items:['Nmap','Nessus','OpenVAS','Nuclei','Trivy','Grype','Burp Suite','Wireshark','tcpdump','Snort','Zeek','fail2ban','ModSecurity']},
+    {keyPT:'Infra & Linux',keyEN:'Infra & Linux',items:['RHEL/CentOS/Rocky','SELinux (enforcing)','CIS/STIG Hardening','nftables','auditd','IPsec/OpenVPN/WireGuard','NAT/PAT','Proxy Reverso','Docker','Ansible','Asterisk/FreePBX']},
+    {keyPT:'Observabilidade',keyEN:'Observability',items:['Zabbix','Splunk (SPL)','ELK Stack','Grafana','Prometheus','Wazuh','Syslog-ng','SIEM']},
+    {keyPT:'Cloud & DevSecOps',keyEN:'Cloud & DevSecOps',items:['AWS (IAM · GuardDuty · CloudTrail)','Azure (Defender · Sentinel)','GitHub Actions','GitLab CI','SAST/DAST','Power BI · DAX','PostgreSQL','Docker Compose']}
+  ],
+  experience:[
+    {period:'2023 – atual',periodEN:'2023 – present',
+     role:'Analista de Suporte Técnico II',roleEN:'Technical Support Analyst II',org:'Dígitro Tecnologia',
+     descPT:'Administra ambientes Linux (RHEL/CentOS) em produção para serviços de missão crítica, respondendo a incidentes N2/N3. Aplica hardening conforme CIS Benchmarks com SELinux em modo enforcing e nftables; mantém monitoramento proativo via Zabbix com templates e triggers customizados. Conduz análise de causa raiz e gerencia infraestrutura VoIP em Asterisk/FreePBX com diagnóstico SIP via Wireshark.',
+     descEN:'Manages Linux (RHEL/CentOS) production environments for mission-critical services handling N2/N3 incidents. Applies CIS hardening with SELinux enforcing and nftables; proactive Zabbix monitoring with custom templates. Root-cause analysis and VoIP infrastructure on Asterisk/FreePBX with SIP diagnostics in Wireshark.'},
+    {period:'2022 – 2023',periodEN:'2022 – 2023',
+     role:'Suporte Técnico N1 & Dados',roleEN:'Data & N1 Technical Support',org:'Secretaria de Estado da Saúde · SC',
+     descPT:'Estruturou e gerenciou bases de dados de saúde pública; desenvolveu dashboards interativos no Power BI com DAX e integração via ODBC/JDBC. Prestou suporte técnico N1 e conduziu iniciativas de governança da informação.',
+     descEN:'Structured and managed public-health databases; built Power BI dashboards with DAX and ODBC/JDBC integration. Provided N1 support and led information-governance initiatives.'},
+    {period:'2021, 11 meses',periodEN:'2021, 11 months',
+     role:'Assistente Administrativa',roleEN:'Administrative Assistant',org:'FIESC',
+     descPT:'Rotinas de RH: admissões, gestão de registros funcionais, elaboração de relatórios e materiais para reuniões.',
+     descEN:'HR operations: onboarding, records management, reporting and materials for meetings and presentations.'}
+  ],
+  termCmds:{
+    pt:{
+      help:'Comandos disponíveis:\n  help, about, whoami, pwd, ls, projects, skills, linkedin, github, contact, clear\n\nDigite um comando e pressione Enter.',
+      about:'Nathalia Gomes Felipe\nAnalista de Infraestrutura, Segurança e Desenvolvedora\nBrasil · SC\n\nEspecialista em Linux hardening, pentest, análise de vulnerabilidades,\nDevSecOps, redes e automação de segurança.',
+      whoami:'nathalia: analista de infra, segurança e dev',
+      pwd:'/home/nathalia',
+      ls:'about.txt  projetos/  arsenal/  experiencia/  contato.txt  README.md',
+      'cat about.txt':'Analista de infraestrutura, segurança e desenvolvedora.\nRHEL/CentOS, SELinux, Docker, Python, nftables.\nOpenSSH: github.com/NathaliaGF',
+      projects:'Projetos publicados:\n  linuxwiki     → https://nathaliagf.github.io/linuxwiki/\n  wikinet       → https://nathaliagf.github.io/wikinet/\n  docker-security-scanner\n  secrets-scanner\n  Helpdesk\n  threat-intel-dashboard',
+      skills:'Linux · SELinux · nftables · Zabbix · Snort\nPython · Bash · MITRE ATT&CK · OWASP · Nmap · Nessus\nDocker · Ansible · Splunk · ELK · AWS · Azure',
+      linkedin:'Abrindo LinkedIn em nova aba...',
+      github:'Abrindo GitHub em nova aba...',
+      contact:'Email:    nathaliagomessfelipe@gmail.com\nLinkedIn: linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9\nGitHub:   github.com/NathaliaGF',
+      clear:''
+    },
+    en:{
+      help:'Available commands:\n  help, about, whoami, pwd, ls, projects, skills, linkedin, github, contact, clear\n\nType a command and press Enter.',
+      about:'Nathalia Gomes Felipe\nInfrastructure, Security Analyst & Developer\nBrazil · SC\n\nSpecialist in Linux hardening, pentest, vulnerability assessment,\nDevSecOps, networking and security automation.',
+      whoami:'nathalia: infra analyst, security and developer',
+      pwd:'/home/nathalia',
+      ls:'about.txt  projects/  arsenal/  experience/  contact.txt  README.md',
+      'cat about.txt':'Infrastructure, security analyst and developer.\nRHEL/CentOS, SELinux, Docker, Python, nftables.\nOpenSSH: github.com/NathaliaGF',
+      projects:'Published projects:\n  linuxwiki     → https://nathaliagf.github.io/linuxwiki/\n  wikinet       → https://nathaliagf.github.io/wikinet/\n  docker-security-scanner\n  secrets-scanner\n  Helpdesk\n  threat-intel-dashboard',
+      skills:'Linux · SELinux · nftables · Zabbix · Snort\nPython · Bash · MITRE ATT&CK · OWASP · Nmap · Nessus\nDocker · Ansible · Splunk · ELK · AWS · Azure',
+      linkedin:'Opening LinkedIn in a new tab...',
+      github:'Opening GitHub in a new tab...',
+      contact:'Email:    nathaliagomessfelipe@gmail.com\nLinkedIn: linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9\nGitHub:   github.com/NathaliaGF',
+      clear:''
+    }
+  }
 };
-function svg(name){ return SVG[name]||''; }
-document.querySelectorAll('[data-svg]').forEach(function(e){ e.innerHTML = svg(e.getAttribute('data-svg')); });
-document.querySelectorAll('[data-svg-prepend]').forEach(function(e){ e.insertAdjacentHTML('afterbegin', svg(e.getAttribute('data-svg-prepend'))); });
 
-/* ---------- desktop icons & start items ---------- */
-var APPS = [
-  {id:'win-about', icon:'user',   key:'app.about', label:'Sobre'},
-  {id:'win-preview', icon:'link', key:'app.prev',  label:'Pré-visualização'},
-  {id:'win-proj',  icon:'folder', key:'app.proj',  label:'Projetos'},
-  {id:'win-ars',   icon:'shield', key:'app.ars',   label:'Arsenal'},
-  {id:'win-xp',    icon:'chart',  key:'app.xp',    label:'Experiência'},
-  {id:'win-term',  icon:'term',   key:'app.term',  label:'Terminal'},
-  {id:'win-contact',icon:'mail',  key:'app.ct',    label:'Contato'}
-];
-var LINKS = [
-  {url:'https://github.com/NathaliaGF', icon:'link', key:'app.gh', label:'GitHub'},
-  {url:'https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9', icon:'link', key:'app.li', label:'LinkedIn'},
-  {url:'https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9', icon:'doc', key:'app.cv', label:'Currículo'},
-];
-(function(){
-  var ic = document.getElementById('icons');
-  APPS.concat(LINKS).forEach(function(a){
-    var d=document.createElement('div'); d.className='dicon';
-    d.innerHTML = svg(a.icon)+'<span data-i18n="'+a.key+'">'+a.label+'</span>';
-    d.title = (a.url ? 'Abrir '+a.label : 'Clique duas vezes para abrir');
-    d.tabIndex=0; d.setAttribute('role','button');
-    function act(){ a.url? window.open(a.url,'_blank') : openWin(a.id); }
-    d.addEventListener('click', function(){ document.querySelectorAll('.dicon').forEach(function(x){x.classList.remove('sel');}); d.classList.add('sel'); if(isMobile()||isTouch()) act(); });
-    d.addEventListener('dblclick', act);
-    d.addEventListener('keydown', function(ev){ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); act(); } });
-    ic.appendChild(d);
+var I18N = {
+  en:{
+    'w.about':'About','w.proj':'Projects','w.ars':'Technical Arsenal','w.xp':'Experience',
+    'w.ct':'Contact','w.comp':'My PC','w.trash':'Recycle Bin',
+    'mb.about':'About the System',
+    'about.role':'Infrastructure Analyst · Security · Dev',
+    'about.bio':'Infrastructure, security and developer specialist. I keep critical systems up, hardened and observable; building the tools that warn when something breaks.',
+    'about.sysinfo':'About the System',
+    'ct.lead':'Open to Security Analyst, Infra, SOC, Pentest and DevSecOps roles.',
+    'ie.sub':'Click to visit Nathalia\'s LinkedIn in a new tab.',
+    'ie.btn':'Open LinkedIn',
+    'ie.note':'⚠️ This version of Internet is no longer compatible with the real Internet.',
+    'comp.sub':'Double-click a folder to open it','comp.status':'5 object(s)',
+    'trash.msg':'The Recycle Bin is empty.',
+    'trash.sub':'"Just like bugs in production (at least I hope 😂)"\n\nrm -rf /bugs 2>/dev/null',
+    'bat.title':'Battery Status','bat.msg':'100% online. No interruptions expected.',
+    'wifi.title':'Networks found','wifi.pw':'Password: <b>[ hidden ]</b>',
+    'wifi.enter':'Enter the password:','wifi.btn':'🔑 Try to find out',
+    'player.note':'Music player coming soon.\nUnder construction 🎧',
+    'login.instr':'To begin, click your user name',
+    'login.role':'Infra · Security · Dev',
+    'login.loading':'Loading personal settings...',
+    'tb.start':'Start','sm.role':'Infra · Security · Dev',
+    'sm.lock':'Lock','sm.restart':'Restart','sm.shut':'Shut down',
+    'hint.msg':'Welcome to NathaliaOS! Double-click the icons to explore.'
+  }
+};
+
+var __PT = {};
+var __lang = 'pt';
+
+function applyLang(lang){
+  var d = lang==='en' ? I18N.en : __PT;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n'); if(d[k]!==undefined) el.innerHTML=d[k];
   });
-  var si=document.getElementById('startitems');
-  APPS.forEach(function(a){ var m=document.createElement('div'); m.className='mi'; m.innerHTML=svg(a.icon)+'<span data-i18n="'+a.key+'">'+a.label+'</span>';
-    m.onclick=function(){ openWin(a.id); toggleStart(false); }; si.appendChild(m); });
-  LINKS.forEach(function(a){ var m=document.createElement('div'); m.className='mi'; m.innerHTML=svg(a.icon)+'<span data-i18n="'+a.key+'">'+a.label+'</span>';
-    m.onclick=function(){ window.open(a.url,'_blank'); toggleStart(false); }; si.appendChild(m); });
-  var sd=document.createElement('div'); sd.className='mi sep'; sd.innerHTML=svg('logo')+'<span data-i18n="app.shut">Desligar…</span>';
-  sd.onclick=function(){ toggleStart(false); document.getElementById('shutdown').classList.add('on'); }; si.appendChild(sd);
-})();
+  document.documentElement.lang=lang; __lang=lang;
+  document.getElementById('btn-lang').textContent=lang==='en'?'PT':'EN';
+  buildDynamic();
+  try{ localStorage.setItem('ngos_lang',lang); }catch(e){}
+}
 
-/* ---------- projects (file explorer) ---------- */
-var PROJ = [
-  {n:'linuxwiki', stack:'HTML · CSS · JS', live:'https://nathaliagf.github.io/linuxwiki/', repo:'https://github.com/NathaliaGF/linuxwiki', key:'proj.linuxwiki', dpt:'Wiki educacional de Linux, do kernel ao troubleshooting real: 14 módulos, terminal interativo no browser, flashcards SM-2 e PWA offline.'},
-  {n:'wikinet', stack:'JavaScript', live:'https://nathaliagf.github.io/wikinet/', repo:'https://github.com/NathaliaGF/wikinet', key:'proj.wikinet', dpt:'RedesWiki: redes do zero ao CCNA: TCP/IP, DNS, IPv6 e segurança, com simuladores interativos e flashcards SM-2.'},
-  {n:'docker-security-scanner', stack:'Python', repo:'https://github.com/NathaliaGF/docker-security-scanner', key:'proj.docker', dpt:'CLI que audita docker-compose.yml e Dockerfiles em busca de configurações inseguras antes de chegarem à produção.'},
-  {n:'secrets-scanner', stack:'Python', repo:'https://github.com/NathaliaGF/secrets-scanner', key:'proj.secrets', dpt:'Varre arquivos, diretórios e todo o histórico do Git em busca de credenciais e chaves de API expostas.'},
-  {n:'Helpdesk', stack:'Node.js · PostgreSQL · Docker', repo:'https://github.com/NathaliaGF/Helpdesk', key:'proj.helpdesk', dpt:'Sistema interno de tickets com controle de acesso por papel, dashboards e automação.'},
-  {n:'threat-intel-dashboard', stack:'JavaScript', repo:'https://github.com/NathaliaGF/threat-intel-dashboard', key:'proj.threat', dpt:'Painel para coletar e visualizar indicadores de threat intelligence em um só lugar.'}
-];
-(function(){
-  var box=document.getElementById('files');
-  PROJ.forEach(function(p){
-    var row=document.createElement('div'); row.className='frow';
-    var fa='<a href="'+p.repo+'" target="_blank" rel="noopener" data-i18n="proj.code" title="Abrir repositório no GitHub (nova aba)">Código ↗</a>';
-    if(p.live){ fa+='<a href="'+p.live+'" target="_blank" rel="noopener" data-i18n="proj.demo" title="Abrir demo ao vivo (nova aba)">Demo ↗</a>';
-      fa+='<button type="button" data-prev="'+p.live+'|'+p.n+'" data-i18n="proj.preview">Pré-visualizar</button>'; }
-    row.innerHTML='<div class="fi">'+svg('folder')+'</div>'+
-      '<div><div class="fn">'+p.n+(p.live?' <span class="lv" data-i18n="proj.liveb">● LIVE</span>':'')+'</div>'+
-      '<div class="fd" data-i18n="'+p.key+'">'+p.dpt+'</div>'+
-      '<div class="fk">'+p.stack+'</div>'+
-      '<div class="fa">'+fa+'</div></div>';
-    box.appendChild(row);
-  });
-  var fc=document.getElementById('filecount'); if(fc) fc.textContent=PROJ.length+' objeto(s)';
-  box.addEventListener('click', function(e){ var b=e.target.closest('[data-prev]'); if(!b) return;
-    e.preventDefault(); var d=b.getAttribute('data-prev').split('|'); openPreview(d[0],d[1]); });
-})();
+function initLang(){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ __PT[el.getAttribute('data-i18n')]=el.innerHTML; });
+  try{ var s=localStorage.getItem('ngos_lang'); if(s==='en') applyLang('en'); }catch(e){}
+}
 
-/* ---------- arsenal tabs ---------- */
-var ARS = [
-  {key:'ars.t1', label:'Linguagens', items:['Python','Bash','AWK/Sed','PowerShell','JavaScript','SQL','Regex','Git']},
-  {key:'ars.t2', label:'Segurança', items:['MITRE ATT&CK','OWASP Top 10','Threat Hunting','Incident Response','OSINT','CVSS Scoring','CVE Triage','Patch Management','NIST CSF','Zero Trust','Defense in Depth']},
-  {key:'ars.t3', label:'Pentest & Análise', items:['Nmap','Nessus','OpenVAS','Nuclei','Trivy','Grype','Burp Suite','Wireshark','tcpdump','Suricata','Snort','Zeek','fail2ban','ModSecurity']},
-  {key:'ars.t4', label:'Infra & Linux', items:['RHEL/CentOS/Rocky','SELinux (enforcing)','CIS/STIG Hardening','nftables','auditd','IPsec/OpenVPN/WireGuard','NAT/PAT','Proxy Reverso','Docker','Ansible','Asterisk/FreePBX']},
-  {key:'ars.t5', label:'Observabilidade', items:['Zabbix','Splunk (SPL)','ELK Stack','Grafana','Prometheus','Wazuh','Syslog-ng','SIEM']},
-  {key:'ars.t6', label:'Cloud & DevSecOps', items:['AWS (IAM · GuardDuty · CloudTrail)','Azure (Defender · Sentinel)','GitHub Actions','GitLab CI','SAST/DAST','Power BI · DAX','PostgreSQL','Docker Compose']}
-];
-(function(){
-  var tabs=document.getElementById('arstabs'), panels=document.getElementById('arspanels');
-  ARS.forEach(function(t,i){
-    var tab=document.createElement('div'); tab.className='tab'+(i===0?' active':''); tab.setAttribute('data-i18n',t.key); tab.textContent=t.label;
-    tab.onclick=function(){ document.querySelectorAll('#arstabs .tab').forEach(function(x){x.classList.remove('active');});
-      document.querySelectorAll('#arspanels .tabpanel').forEach(function(x){x.classList.remove('active');});
-      tab.classList.add('active'); panels.children[i].classList.add('active'); };
+function buildDynamic(){
+  buildFavs(); buildProjects(); buildArsenal(); buildTimeline(); buildContact(); buildExplorer();
+}
+
+function buildFavs(){
+  var el=document.getElementById('about-favs'); if(!el) return;
+  el.innerHTML=DATA.favTechs.map(function(t){ return '<span class="tag">'+t+'</span>'; }).join('');
+}
+
+function buildProjects(){
+  var el=document.getElementById('proj-grid'); if(!el) return;
+  el.innerHTML=DATA.projects.map(function(p){
+    var desc=__lang==='en'?p.descEN:p.descPT;
+    var live=p.live?'<a class="plink demo" href="'+p.live+'" target="_blank" rel="noopener">Demo ↗</a>':'';
+    var badge=p.live?'<span class="plink live-badge">● LIVE</span>':'';
+    return '<div class="proj-card">'
+      +'<div class="proj-thumb '+p.thumbCls+'">'+p.thumb+'</div>'
+      +'<div class="proj-body">'
+        +'<div class="proj-name">'+p.name+' '+badge+'</div>'
+        +'<div class="proj-desc">'+desc+'</div>'
+        +'<div class="proj-techs">'+p.techs.map(function(t){ return '<span class="proj-tech">'+t+'</span>'; }).join('')+'</div>'
+        +'<div class="proj-actions"><a class="plink gh" href="'+p.repo+'" target="_blank" rel="noopener">GitHub</a>'+live+'</div>'
+      +'</div>'
+    +'</div>';
+  }).join('');
+}
+
+function buildArsenal(){
+  var tabs=document.getElementById('ars-tabs');
+  var panels=document.getElementById('ars-panels');
+  if(!tabs||!panels) return;
+  tabs.innerHTML=''; panels.innerHTML='';
+  DATA.arsenal.forEach(function(cat,i){
+    var label=__lang==='en'?cat.keyEN:cat.keyPT;
+    var tab=document.createElement('div'); tab.className='ars-tab'+(i===0?' active':'');
+    tab.textContent=label;
+    tab.addEventListener('click',function(){
+      document.querySelectorAll('.ars-tab').forEach(function(t){t.classList.remove('active');});
+      document.querySelectorAll('.ars-panel').forEach(function(p){p.classList.remove('active');});
+      tab.classList.add('active'); panels.children[i].classList.add('active');
+    });
     tabs.appendChild(tab);
-    var pan=document.createElement('div'); pan.className='tabpanel'+(i===0?' active':'');
-    pan.innerHTML='<div class="chiplist">'+t.items.map(function(x){return '<span class="chip">'+x+'</span>';}).join('')+'</div>';
+    var pan=document.createElement('div'); pan.className='ars-panel'+(i===0?' active':'');
+    pan.innerHTML=cat.items.map(function(it){ return '<span class="chip">'+it+'</span>'; }).join('');
     panels.appendChild(pan);
   });
-})();
-
-/* ---------- window manager ---------- */
-var Z=10, _openCount=0;
-function isMobile(){ return window.matchMedia('(max-width:760px)').matches; }
-function isTouch(){ return window.matchMedia('(pointer:coarse)').matches; }
-function focusWin(w){ Z++; w.style.zIndex=Z; document.querySelectorAll('.win').forEach(function(x){x.classList.add('blur');}); w.classList.remove('blur'); updateTasks(); }
-function openWin(id){
-  var w=document.getElementById(id); if(!w) return;
-  if(!w.classList.contains('open') && !isMobile()){
-    var base={about:{t:54,l:120},proj:{t:72,l:200},ars:{t:90,l:155},xp:{t:68,l:240},contact:{t:110,l:265},term:{t:140,l:310},preview:{t:58,l:175}};
-    var key=id.replace('win-',''); var b=base[key];
-    if(b && w.style.top===w.getAttribute('data-orig-top')||!w.dataset.moved){
-      var off=(_openCount%4)*22; w.style.top=(b.t+off)+'px'; w.style.left=(b.l+off)+'px'; w.dataset.moved='1';
-    }
-    _openCount++;
-  }
-  w.classList.add('open'); w.dataset.min='0';
-  if(isMobile()||isTouch()) w.classList.add('max');
-  w.classList.remove('opening'); void w.offsetWidth; w.classList.add('opening');
-  focusWin(w); ensureTask(id);
-  if(id==='win-term') runTerminal();
-}
-function closeWin(w){ w.classList.remove('open'); removeTask(w.id); updateTasks(); }
-function minWin(w){ w.dataset.min='1'; w.classList.remove('open'); updateTasks(); }
-function toggleMax(w){ w.classList.toggle('max'); if(w.classList.contains('max')){ w.dataset.px=w.style.left+'|'+w.style.top+'|'+w.style.width;
-    w.style.left='0px'; w.style.top='0px'; w.style.width='100%'; w.style.height='calc(100vh - 40px)'; }
-  else if(w.dataset.px){ var p=w.dataset.px.split('|'); w.style.left=p[0]; w.style.top=p[1]; w.style.width=p[2]; w.style.height='auto'; } }
-document.querySelectorAll('.win').forEach(function(w){
-  w.addEventListener('mousedown', function(){ focusWin(w); });
-  w.querySelector('.tbtns').addEventListener('click', function(e){
-    var act=e.target.getAttribute('data-act'); if(!act) return; e.stopPropagation();
-    if(act==='close') closeWin(w); else if(act==='min') minWin(w); else if(act==='max') toggleMax(w);
-  });
-  var tt=w.querySelector('.title'), drag=false, ox=0, oy=0;
-  function onMove(e){ if(!drag) return;
-    var x=Math.max(0,Math.min(e.clientX-ox, window.innerWidth-80));
-    var y=Math.max(0,Math.min(e.clientY-oy, window.innerHeight-80));
-    w.style.left=x+'px'; w.style.top=y+'px'; }
-  function onUp(){ if(!drag) return; drag=false; document.body.style.userSelect='';
-    document.removeEventListener('mousemove', onMove);
-    document.removeEventListener('mouseup', onUp); }
-  tt.addEventListener('mousedown', function(e){
-    if(isMobile()||w.classList.contains('max')) return; if(e.target.closest('.tbtns')) return;
-    drag=true; ox=e.clientX-w.offsetLeft; oy=e.clientY-w.offsetTop;
-    document.body.style.userSelect='none';
-    document.addEventListener('mousemove', onMove);
-    document.addEventListener('mouseup', onUp);
-  });
-});
-
-/* taskbar buttons */
-function ensureTask(id){ if(document.getElementById('task-'+id)) return;
-  var w=document.getElementById(id); var b=document.createElement('div'); b.className='taskbtn'; b.id='task-'+id;
-  var tn=w.querySelector('.tname'); b.innerHTML=svg(w.querySelector('.ticon')?w.querySelector('.ticon').getAttribute('data-svg'):'folder')+'<span>'+(tn?tn.textContent:id)+'</span>';
-  b.onclick=function(){ if(w.classList.contains('open')&&!w.classList.contains('blur')){ minWin(w); } else { w.classList.add('open'); focusWin(w); } };
-  document.getElementById('tasks').appendChild(b); }
-function removeTask(id){ var b=document.getElementById('task-'+id); if(b) b.remove(); }
-function updateTasks(){ document.querySelectorAll('.taskbtn').forEach(function(b){ var w=document.getElementById(b.id.replace('task-','')); 
-  b.classList.toggle('active', w.classList.contains('open')&&!w.classList.contains('blur')); }); }
-
-/* start menu */
-function toggleStart(on){ var m=document.getElementById('startmenu'), s=document.getElementById('start');
-  var v = on===undefined ? !m.classList.contains('on') : on; m.classList.toggle('on',v); s.classList.toggle('on',v); }
-  (function(){ var sep=document.createElement('div'); sep.id='task-sep';
-    var tb=document.getElementById('taskbar'), ts=document.getElementById('tasks');
-    if(tb&&ts) tb.insertBefore(sep,ts); })();
-document.getElementById('start').addEventListener('click', function(e){ e.stopPropagation(); toggleStart(); });
-document.addEventListener('click', function(){ toggleStart(false); });
-document.getElementById('startmenu').addEventListener('click', function(e){ e.stopPropagation(); });
-
-/* clock */
-function tick(){ var d=new Date(); var h2=String(d.getHours()).padStart(2,'0'), m=String(d.getMinutes()).padStart(2,'0');
-  var ck=document.getElementById('clock'); ck.textContent=h2+':'+m;
-  var days=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
-  var months=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
-  ck.title=days[d.getDay()]+', '+d.getDate()+' de '+months[d.getMonth()]+' de '+d.getFullYear(); } tick(); setInterval(tick,60000);
-
-/* reboot */
-document.getElementById('reboot').onclick=function(){ document.getElementById('shutdown').classList.remove('on'); location.reload(); };
-
-/* ---------- i18n ---------- */
-var I18N={ en:{
-  "start":"Start","boot.skip":"click to skip ▸",
-  "app.about":"About","app.proj":"Projects","app.ars":"Arsenal","app.xp":"Experience","app.term":"Terminal","app.ct":"Contact","app.gh":"GitHub","app.li":"LinkedIn","app.shut":"Shut down…",
-  "about.title":"About","about.cap":"infra · sec · dev",
-  "about.lead":"Security analyst, infrastructure and developer. I keep critical systems up, hardened and observable; building the tools that warn when something breaks.",
-  "about.p1":"Works the technical side of security: threat hunting with MITRE ATT&CK, vulnerability assessment (Nmap, Nessus, Nuclei, Trivy), incident response, IDS/IPS with Suricata and Zeek, and OSINT. Practices pentest in labs (HTB, TryHackMe) and implements DevSecOps pipelines with SAST/DAST in CI/CD.",
-  "about.p2":"In production, manages Linux (RHEL/CentOS/Rocky) with SELinux enforcing, nftables, auditd and CIS/STIG hardening; maintains VPNs (IPsec, WireGuard), VLAN/MPLS networks and VoIP on Asterisk/FreePBX. Monitors with Zabbix, Splunk and Grafana. Builds security CLIs in Python, automates with Bash and Ansible, and maintains CI/CD pipelines on GitHub Actions and GitLab CI.",
-  "about.p3":"Studying Information Systems (cybersecurity specialization) + technical degree from SENAI/SC.",
-  "proj.title":"Projects","proj.path":"📁 C:\\Nathalia\\projects","proj.hint":"● = published live","proj.code":"Code","proj.demo":"Demo","proj.liveb":"● LIVE",
-  "proj.linuxwiki":"Educational Linux wiki: 14 modules, in-browser terminal, SM-2 flashcards, offline PWA.",
-  "proj.wikinet":"RedesWiki: networking from scratch to CCNA: TCP/IP, DNS, IPv6, with interactive simulators.",
-  "proj.docker":"CLI auditing docker-compose & Dockerfiles for security misconfigurations.",
-  "proj.secrets":"Scans files, dirs and Git history for exposed credentials and API keys.",
-  "proj.helpdesk":"Internal ticketing with role-based access, dashboards and automation.",
-  "proj.threat":"Dashboard to collect and visualize threat-intelligence indicators.",
-  "ars.title":"Technical arsenal: properties","ars.t1":"Languages","ars.t2":"Security","ars.t3":"Pentest & Analysis","ars.t4":"Infra & Linux","ars.t5":"Observability","ars.t6":"Cloud & DevSecOps",
-  "xp.title":"Experience",
-  "xp.w1":"2023 to present · <span class='org'>Dígitro Tecnologia</span>","xp.r1":"Technical Support Analyst II",
-  "xp.d1":"Manages Linux (RHEL/CentOS) environments in production for mission-critical services, handling N2/N3 incidents. Applies hardening per CIS Benchmarks with SELinux in enforcing mode and nftables; maintains proactive monitoring via Zabbix with custom templates and triggers. Conducts root-cause analysis on recurring incidents and manages VoIP infrastructure on Asterisk/FreePBX with SIP traffic diagnostics in Wireshark.",
-  "xp.w2":"2022 to 2023 · <span class='org'>Health Dept · SC</span>","xp.r2":"Data & N1 Technical Support",
-  "xp.d2":"Structured and managed institutional public-health databases; built interactive Power BI dashboards with DAX and multi-source integration via ODBC/JDBC to support data-driven decision-making. Provided N1 technical support and led information-governance initiatives with internal users.",
-  "xp.w3":"2021, 11 months · <span class='org'>FIESC</span>","xp.r3":"Administrative Assistant",
-  "xp.d3":"Supported HR operations: onboarding, employee records management, report preparation, and creation of materials for meetings and presentations.",
-  "ct.title":"Contact","ct.lead":"Open to Security Analyst, Infra, SOC, Pentest, DevSecOps and GRC roles. Let's talk?",
-  "app.cv":"Résumé",
-  "id.role":"Infra · Security · Developer","id.cv":"⬇ Résumé (PDF)","id.contact":"✉ Contact",
-  "about.eduh":"Education & continuous learning","about.edu1":"B.Sc. in Information Systems, cybersecurity specialization (Estácio).","about.edu2":"Technical degree in Systems Development, SENAI/SC.","about.learn":"Learning:",
-  "ct.cv":"Download résumé (PDF)",
-  "proj.preview":"Preview","proj.liveb":"● LIVE",
-  "prev.title":"Preview","prev.note":"Live projects open in a new tab (iframes are blocked by the servers).","prev.open":"Open project ↗","prev.open2":"Open live ↗",
-  "hint.t":"👋 Welcome to NathaliaOS","hint.b":"Double-click the icons to open windows. Drag them by the title bar. Use the Start menu to navigate.","hint.x":"Got it ✕","app.prev":"Preview",
-  "shut.msg":"It's now safe to turn off your computer.","shut.reboot":"Turn on again"
-}};
-var PT={}; document.querySelectorAll('[data-i18n]').forEach(function(e){ PT[e.getAttribute('data-i18n')]=e.innerHTML; });
-window.__lang='pt';
-function applyLang(lang){ var d=(lang==='en')?I18N.en:PT;
-  document.querySelectorAll('[data-i18n]').forEach(function(e){ var k=e.getAttribute('data-i18n'); if(d[k]!==undefined) e.innerHTML=d[k]; });
-  document.documentElement.lang=lang; window.__lang=lang; updateTasks();
-  termRan=false; var tel=document.getElementById('termtext'); if(tel) tel.innerHTML='';
-  if(document.getElementById('win-term').classList.contains('open')) runTerminal();
-}
-document.getElementById('langbtn').addEventListener('click', function(e){
-  e.stopPropagation();
-  var next = window.__lang==='en' ? 'pt' : 'en';
-  applyLang(next);
-  document.getElementById('langbtn').textContent = next==='en' ? 'PT' : 'EN';
-});
-
-/* ---------- terminal typing ---------- */
-var TERM={ pt:[
-  ['c','C:\\> '],['','whoami\n'],['','nathalia: analista de infra, seguranca e dev\n\n'],
-  ['c','C:\\> '],['','type foco.txt\n'],['','linux hardening · pentest · threat hunting · devsecops · network security\n\n'],
-  ['c','C:\\> '],['','uptime\n'],['','4+ anos mantendo sistemas criticos no ar\n\n'],
-  ['c','C:\\> '],['','contato.exe\n'],['link','[LinkedIn]  [GitHub]  [Email]\n']
-], en:[
-  ['c','C:\\> '],['','whoami\n'],['','nathalia: infra analyst, security and developer\n\n'],
-  ['c','C:\\> '],['','type focus.txt\n'],['','linux hardening · pentest · threat hunting · devsecops · network security\n\n'],
-  ['c','C:\\> '],['','uptime\n'],['','4+ years keeping critical systems alive\n\n'],
-  ['c','C:\\> '],['','contact.exe\n'],['link','[LinkedIn]  [GitHub]  [Email]\n']
-]};
-var termRan=false;
-function runTerminal(){
-  var el=document.getElementById('termtext'); if(!el) return;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var seq=TERM[window.__lang]||TERM.pt; el.innerHTML=''; termRan=true;
-  if(reduce){ seq.forEach(function(s){ el.innerHTML+= s[0]==='c'?'<span class="c">'+s[1]+'</span>':s[1]; }); el.innerHTML+='<span class="blink">█</span>'; return; }
-  var si=0, ci=0;
-  function step(){
-    if(si>=seq.length){ el.innerHTML+='<span class="blink">█</span>'; return; }
-    var seg=seq[si], cls=seg[0], txt=seg[1];
-    if(ci===0 && cls){ el.insertAdjacentHTML('beforeend','<span class="'+cls+'" id="seg'+si+'"></span>'); }
-    var host = cls? document.getElementById('seg'+si) : el;
-    host.textContent += txt[ci]; ci++;
-    if(ci>=txt.length){ si++; ci=0; setTimeout(step, cls==='c'?60:10); } else { setTimeout(step, txt[ci-1]==='\n'?40:14); }
-  }
-  step();
-  if(!reduce){
-    var inp = document.createElement('div');
-    inp.contentEditable='true'; inp.spellcheck=false;
-    inp.style.cssText='outline:none;color:var(--green);font-family:var(--crt);font-size:19px;display:inline';
-    var prompt = document.createElement('span');
-    prompt.style.color='#fff'; prompt.textContent='C:\\> ';
-    inp.addEventListener('keydown', function(ev){
-      if(ev.key!=='Enter') return; ev.preventDefault();
-      var cmd=(inp.textContent||'').trim().toLowerCase();
-      inp.textContent='';
-      var replies={
-        'help':'comandos: whoami, ls, cat about.txt, cat projetos.txt, clear',
-        'whoami':'nathalia: analista de infra, seguranca e dev',
-        'ls':'about.txt  projetos.txt  arsenal.txt  contato.txt',
-        'cat about.txt':'analista de infraestrutura, seguranca e desenvolvedora. RHEL/CentOS, SELinux, Docker, Python.',
-        'cat projetos.txt':'linuxwiki (LIVE), wikinet (LIVE), docker-security-scanner, secrets-scanner, helpdesk, threat-intel-dashboard',
-        'cat arsenal.txt':'Python, Bash, MITRE ATT&CK, OWASP, SELinux, nftables, Zabbix, SIEM',
-        'cat contato.txt':'nathaliagomessfelipe@gmail.com | linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9',
-        'clear':''
-      };
-      if(cmd==='clear'){ el.innerHTML=''; }
-      else if(replies[cmd]){ el.insertAdjacentText('beforeend', '\n'+replies[cmd]+'\n'); }
-      else if(cmd){ el.insertAdjacentText('beforeend', "\n'"+cmd+"' nao reconhecido. Digite help.\n"); }
-      el.appendChild(prompt.cloneNode(true));
-      el.appendChild(inp);
-      el.scrollTop=el.scrollHeight;
-    });
-    // wait for animation to end then show prompt
-    setTimeout(function(){
-      el.appendChild(prompt.cloneNode(true));
-      el.appendChild(inp);
-    }, seq.length * 55 + 600);
-  }
 }
 
-/* ---------- boot sequence ---------- */
-(function(){
-  var boot=document.getElementById('boot'), txt=document.getElementById('boottext');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var lines=[
-    "NathaliaOS BIOS v2.0.26  (C) 1998-2026",
-    "",
-    "CPU: SecAnalyst @ 3.3GHz ......... OK",
-    "Memory Test: 640K base, hardened . OK",
-    "Detecting drives ................. OK",
-    "Loading kernel: linux-secure ..... OK",
-    "Mounting /home/nathalia .......... OK",
-    "Starting services: zabbix, ssh, ufw",
-    "Firewall (nftables) .............. ACTIVE",
-    "SELinux .......................... ENFORCING",
-    "",
-    "Nathalia Gomes Felipe :: Infra / Seguranca / Dev",
-    (function(){ try{return localStorage.getItem('ngos_lang')=='en'?'Starting NathaliaOS...':''; }catch(e){return '';} })()||
-    "Iniciando NathaliaOS..."
+function buildTimeline(){
+  var el=document.getElementById('timeline'); if(!el) return;
+  el.innerHTML=DATA.experience.map(function(e){
+    var period=__lang==='en'?e.periodEN:e.period;
+    var role=__lang==='en'?e.roleEN:e.role;
+    var desc=__lang==='en'?e.descEN:e.descPT;
+    return '<div class="tl-item"><div class="tl-dot"></div>'
+      +'<div class="tl-period">'+period+'</div>'
+      +'<div class="tl-role">'+role+'</div>'
+      +'<div class="tl-org">'+e.org+'</div>'
+      +'<div class="tl-desc">'+desc+'</div>'
+    +'</div>';
+  }).join('');
+}
+
+function buildContact(){
+  var el=document.getElementById('ct-links'); if(!el) return;
+  var links=[
+    {ico:'💼',label:'LinkedIn',url:'https://www.linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9'},
+    {ico:'🐙',label:'GitHub',url:'https://github.com/NathaliaGF'},
+    {ico:'✉️',label:'nathaliagomessfelipe@gmail.com',url:'mailto:nathaliagomessfelipe@gmail.com'}
   ];
-  var progBar=document.getElementById('bootbar'), progLbl=document.getElementById('bootprogLabel');
-  function setProgress(pct,lbl){ if(progBar) progBar.style.width=pct+'%'; if(progLbl&&lbl) progLbl.textContent=lbl; }
-  function finish(){ boot.style.display='none';
-    if(!isMobile()){ openWin('win-proj'); }
-    openWin('win-about');
-    if(isMobile()){ window.scrollTo(0,0); var ic=document.getElementById('icons'); if(ic) ic.scrollIntoView({behavior:'smooth',block:'start'}); }
-    setTimeout(function(){ if(typeof showHint==='function') showHint(); }, 400); }
-  if(reduce){ txt.textContent=lines.join('\n'); setTimeout(finish,400); }
-  else{
-    var i=0; (function line(){
-      if(i<lines.length){
-        txt.textContent+=lines[i]+'\n';
-        setProgress(Math.round((i+1)/lines.length*100), lines[i]||'Carregando...');
-        i++; setTimeout(line, i<3?260:150);
-      } else { setTimeout(finish,650); }
-    })();
-  }
-  boot.addEventListener('click', finish);
-})();
-</script>
+  el.innerHTML=links.map(function(l){
+    return '<a class="ct-btn" href="'+l.url+'" target="_blank" rel="noopener">'
+      +'<span class="ct-ico">'+l.ico+'</span>'
+      +'<span class="ct-label">'+l.label+'</span>'
+      +'<span class="ct-arrow">›</span>'
+    +'</a>';
+  }).join('');
+}
 
-<script>
-function openPreview(url,title){
-  var po=document.getElementById('prevopen'); if(po){ po.href=url; }
-  var pb=document.getElementById('prevbig'); if(pb){ pb.href=url; }
-  var pn=document.getElementById('prevname'); if(pn){ pn.textContent=title; }
-  var t=document.getElementById('prevtitle'); if(t) t.textContent=title;
-  var tb=document.getElementById('task-win-preview'); if(tb){ var sp=tb.querySelector('span'); if(sp) sp.textContent=title; }
-  if(window.openWin) window.openWin('win-preview');
-}
-function hideHint(){ var h=document.getElementById('hint'); if(h) h.classList.remove('on'); }
-function showHint(force){
-  var h=document.getElementById('hint'); if(!h) return;
-  if(!force){ try{ if(localStorage.getItem('ngos_seen')==='1') return; }catch(e){} }
-  h.classList.add('on');
-  try{ localStorage.setItem('ngos_seen','1'); }catch(e){}
-  clearTimeout(window.__hintT); window.__hintT=setTimeout(hideHint, 22000);
-}
-(function(){
-  /* a11y on windows + title controls */
-  document.querySelectorAll('.win').forEach(function(w){
-    w.setAttribute('role','dialog'); w.setAttribute('aria-modal','false'); w.tabIndex=-1;
-    var t=w.querySelector('.tname'); if(t) w.setAttribute('aria-label', t.textContent);
-    w.querySelectorAll('.tbtn').forEach(function(b){ b.tabIndex=0; b.setAttribute('role','button');
-      var a=b.getAttribute('data-act'); b.setAttribute('aria-label', a==='close'?'Fechar':(a==='min'?'Minimizar':'Maximizar'));
-      b.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); b.click(); } });
+function buildExplorer(){
+  var el=document.getElementById('explorer-grid'); if(!el) return;
+  var folders=[
+    {ico:'📄',lbl:__lang==='en'?'About':'Sobre',win:'win-about'},
+    {ico:'📁',lbl:__lang==='en'?'Projects':'Projetos',win:'win-proj'},
+    {ico:'🛡️',lbl:'Arsenal',win:'win-ars'},
+    {ico:'📋',lbl:__lang==='en'?'Experience':'Experiência',win:'win-xp'},
+    {ico:'✉️',lbl:__lang==='en'?'Contact':'Contato',win:'win-contact'}
+  ];
+  el.innerHTML=folders.map(function(f){
+    return '<div class="exp-folder" data-win="'+f.win+'"><div class="ef-ico">'+f.ico+'</div><div class="ef-lbl">'+f.lbl+'</div></div>';
+  }).join('');
+  el.querySelectorAll('.exp-folder').forEach(function(f){
+    var t=null;
+    f.addEventListener('click',function(){
+      if(t){clearTimeout(t);t=null; OS.openWin(f.getAttribute('data-win')); return;}
+      t=setTimeout(function(){t=null;},280);
     });
   });
-  /* focus window on open */
-  if(window.openWin){ var _o=window.openWin; window.openWin=function(id){ _o(id); var w=document.getElementById(id);
-    if(w) setTimeout(function(){ try{w.focus();}catch(e){} },0); }; }
-  /* Esc closes top window */
-  document.addEventListener('keydown', function(e){ if(e.key!=='Escape') return;
-    if(document.getElementById('startmenu').classList.contains('on')){ toggleStart(false); return; }
-    var open=[].slice.call(document.querySelectorAll('.win.open')); if(!open.length) return;
-    open.sort(function(a,b){ return (parseInt(b.style.zIndex||0,10))-(parseInt(a.style.zIndex||0,10)); });
-    if(window.closeWin) window.closeWin(open[0]); });
-  /* start button aria */
-  var st=document.getElementById('start'); st.setAttribute('role','button'); st.setAttribute('aria-haspopup','true'); st.setAttribute('aria-expanded','false');
-  if(window.toggleStart){ var _t=window.toggleStart; window.toggleStart=function(on){ _t(on);
-    st.setAttribute('aria-expanded', document.getElementById('startmenu').classList.contains('on')?'true':'false'); }; }
-  /* functional menubar */
-  document.querySelectorAll('[data-mb]').forEach(function(s){ s.addEventListener('click', function(){
-    var a=s.getAttribute('data-mb'); var w=s.closest('.win');
-    if(a==='close'&&w&&window.closeWin) window.closeWin(w); else if(a==='help') showHint(true); }); });
-  /* identity-banner contact button */
-  var ct=document.getElementById('id-ct'); if(ct) ct.addEventListener('click', function(e){ e.preventDefault(); if(window.openWin) window.openWin('win-contact'); });
-  /* language persistence */
-  if(window.applyLang){ var _a=window.applyLang; window.applyLang=function(l){ _a(l); try{localStorage.setItem('ngos_lang',l);}catch(e){} }; }
-  try{ var sv=localStorage.getItem('ngos_lang'); if(sv==='en'&&window.applyLang) window.applyLang('en'); }catch(e){}
-  var lb=document.getElementById('langbtn'); if(lb) lb.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); lb.click(); } });
-  var hb=document.getElementById('helpbtn'); if(hb){ hb.addEventListener('click', function(e){ e.stopPropagation(); showHint(true); }); hb.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); showHint(true); } }); }
+}
+
+var ICONS=[
+  {ico:'🖥️',lbl:['Meu PC','My PC'],win:'win-computer'},
+  {ico:'📄',lbl:['Sobre','About'],win:'win-about'},
+  {ico:'📁',lbl:['Projetos','Projects'],win:'win-proj'},
+  {ico:'🛡️',lbl:['Arsenal','Arsenal'],win:'win-ars'},
+  {ico:'📋',lbl:['Experiência','Experience'],win:'win-xp'},
+  {ico:'💻',lbl:['Terminal','Terminal'],win:'win-term'},
+  {ico:'✉️',lbl:['Contato','Contact'],win:'win-contact'},
+  {ico:'🌐',lbl:['Internet','Internet'],win:'win-ie'},
+  {ico:'🗑️',lbl:['Lixeira','Recycle Bin'],win:'win-trash'}
+];
+
+function buildIcons(){
+  var grid=document.getElementById('icons-grid'); if(!grid) return;
+  grid.innerHTML='';
+  ICONS.forEach(function(ic){
+    var d=document.createElement('div'); d.className='dicon';
+    var lbl=__lang==='en'?ic.lbl[1]:ic.lbl[0];
+    d.innerHTML='<div class="ico">'+ic.ico+'</div><div class="lbl">'+lbl+'</div>';
+    d.title='Clique duas vezes para abrir';
+    var t=null;
+    d.addEventListener('click',function(){
+      document.querySelectorAll('.dicon').forEach(function(x){x.classList.remove('sel');});
+      d.classList.add('sel');
+      if(OS.isTouch()){OS.openWin(ic.win); return;}
+      if(t){clearTimeout(t);t=null; OS.openWin(ic.win); return;}
+      t=setTimeout(function(){t=null;},300);
+    });
+    grid.appendChild(d);
+  });
+}
+
+function buildStartMenu(){
+  var el=document.getElementById('sm-body'); if(!el) return;
+  var items=[
+    {ico:'📄',lbl:['Sobre','About'],win:'win-about'},
+    {ico:'📁',lbl:['Projetos','Projects'],win:'win-proj'},
+    {ico:'🛡️',lbl:['Arsenal','Arsenal'],win:'win-ars'},
+    {ico:'📋',lbl:['Experiência','Experience'],win:'win-xp'},
+    {ico:'💻',lbl:['Terminal','Terminal'],win:'win-term'},
+    {ico:'✉️',lbl:['Contato','Contact'],win:'win-contact'},
+    {ico:'🌐',lbl:['Internet','Internet'],win:'win-ie'},
+    {ico:'🗑️',lbl:['Lixeira','Recycle Bin'],win:'win-trash'}
+  ];
+  el.innerHTML=items.map(function(it){
+    var lbl=__lang==='en'?it.lbl[1]:it.lbl[0];
+    return '<div class="sm-item" data-win="'+it.win+'"><span class="si-ico">'+it.ico+'</span><span class="si-lbl">'+lbl+'</span></div>';
+  }).join('');
+  el.querySelectorAll('.sm-item').forEach(function(it){
+    it.addEventListener('click',function(){ OS.openWin(it.getAttribute('data-win')); OS.toggleStart(false); });
+  });
+}
+
+var OS=(function(){
+  var Z=10,_oc=0;
+  function isMobile(){ return window.matchMedia('(max-width:700px)').matches; }
+  function isTouch(){ return window.matchMedia('(pointer:coarse)').matches; }
+
+  function focusWin(w){
+    Z++; w.style.zIndex=Z;
+    document.querySelectorAll('.win').forEach(function(x){x.classList.add('blur-win');});
+    w.classList.remove('blur-win');
+    updateTasks();
+  }
+
+  function openWin(id){
+    var w=document.getElementById(id); if(!w) return;
+    if(!w.classList.contains('open')){
+      if(!isMobile()&&!w.dataset.moved){
+        var off=(_oc%5)*24;
+        w.style.top=(parseInt(w.style.top)||60)+off+'px';
+        w.style.left=(parseInt(w.style.left)||160)+off+'px';
+        w.dataset.moved='1'; _oc++;
+      }
+      w.classList.add('open');
+      w.dataset.min='0';
+      if(isMobile()||isTouch()) w.classList.add('maxed');
+      if(id==='win-term') initTerm();
+    }
+    focusWin(w); ensureTask(id);
+  }
+
+  function closeWin(w){ w.classList.remove('open'); removeTask(w.id); updateTasks(); }
+  function minWin(w){ w.dataset.min='1'; w.classList.remove('open'); updateTasks(); }
+
+  function toggleMax(w){
+    if(w.classList.toggle('maxed')){
+      w.dataset.pr=w.style.top+'|'+w.style.left+'|'+w.style.width+'|'+w.style.height;
+    } else if(w.dataset.pr){
+      var p=w.dataset.pr.split('|');
+      w.style.top=p[0];w.style.left=p[1];w.style.width=p[2];w.style.height=p[3];
+    }
+  }
+
+  function initWins(){
+    document.querySelectorAll('.win').forEach(function(w){
+      w.addEventListener('mousedown',function(){ focusWin(w); });
+      var tbtns=w.querySelector('.tbtns');
+      if(tbtns) tbtns.addEventListener('click',function(e){
+        var act=e.target.closest('.tbtn'); if(!act) return;
+        var a=act.getAttribute('data-act');
+        if(a==='close') closeWin(w);
+        else if(a==='min') minWin(w);
+        else if(a==='max') toggleMax(w);
+      });
+      var tb=w.querySelector('.titlebar'),drag=false,ox=0,oy=0;
+      function onMove(e){
+        if(!drag) return;
+        w.style.left=Math.max(0,Math.min(e.clientX-ox,window.innerWidth-100))+'px';
+        w.style.top=Math.max(0,Math.min(e.clientY-oy,window.innerHeight-80))+'px';
+      }
+      function onUp(){
+        if(!drag) return; drag=false; document.body.style.userSelect='';
+        document.removeEventListener('mousemove',onMove);
+        document.removeEventListener('mouseup',onUp);
+      }
+      if(tb) tb.addEventListener('mousedown',function(e){
+        if(isMobile()||isTouch()||w.classList.contains('maxed')) return;
+        if(e.target.closest('.tbtns')) return;
+        drag=true; ox=e.clientX-w.offsetLeft; oy=e.clientY-w.offsetTop;
+        document.body.style.userSelect='none';
+        document.addEventListener('mousemove',onMove);
+        document.addEventListener('mouseup',onUp);
+      });
+      var mb=w.querySelector('.menubar');
+      if(mb) mb.addEventListener('click',function(e){
+        var span=e.target.closest('[data-mb]'); if(!span) return;
+        if(span.getAttribute('data-mb')==='winver') openWin('win-winver');
+      });
+    });
+  }
+
+  function ensureTask(id){
+    if(document.getElementById('task-'+id)) return;
+    var w=document.getElementById(id);
+    var tname=w.querySelector('.tname'); var ticon=w.querySelector('.ticon');
+    var btn=document.createElement('div'); btn.className='taskbtn'; btn.id='task-'+id;
+    btn.innerHTML=(ticon?'<span class="ti">'+ticon.textContent+'</span>':'')
+      +'<span>'+(tname?tname.textContent:id)+'</span>';
+    btn.addEventListener('click',function(){
+      if(w.classList.contains('open')&&!w.classList.contains('blur-win')) minWin(w);
+      else{ w.classList.add('open'); focusWin(w); }
+    });
+    document.getElementById('tasks').appendChild(btn);
+  }
+  function removeTask(id){ var b=document.getElementById('task-'+id); if(b) b.remove(); }
+  function updateTasks(){
+    document.querySelectorAll('.taskbtn').forEach(function(b){
+      var w=document.getElementById(b.id.replace('task-',''));
+      b.classList.toggle('active',!!(w&&w.classList.contains('open')&&!w.classList.contains('blur-win')));
+    });
+  }
+
+  var smOpen=false;
+  function toggleStart(on){
+    smOpen=on===undefined?!smOpen:on;
+    document.getElementById('startmenu').classList.toggle('open',smOpen);
+  }
+
+  function initKeyboard(){
+    document.addEventListener('keydown',function(e){
+      if(e.key!=='Escape') return;
+      if(smOpen){toggleStart(false);return;}
+      var open=[].slice.call(document.querySelectorAll('.win.open'));
+      if(!open.length) return;
+      open.sort(function(a,b){return +b.style.zIndex-(+a.style.zIndex)});
+      closeWin(open[0]);
+    });
+  }
+
+  return {openWin,closeWin,minWin,toggleMax,toggleStart,isMobile,isTouch,initWins,initKeyboard};
+})();
+
+var termInited=false;
+function initTerm(){
+  var out=document.getElementById('term-out');
+  var inp=document.getElementById('term-input');
+  if(!out||!inp) return;
+  if(termInited){ inp.focus(); return; }
+  termInited=true;
+  appendTerm(out,__lang==='en'?'NathaliaOS Terminal v2.0\nType "help" for available commands.\n':'NathaliaOS Terminal v2.0\nDigite "help" para ver os comandos disponíveis.\n','t-info');
+  inp.addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return; e.preventDefault();
+    var cmd=(inp.value||'').trim().toLowerCase(); inp.value='';
+    appendTerm(out,'nathalia@nathaliaos:~$ '+cmd,'t-cmd');
+    runCmd(out,cmd);
+    out.scrollTop=out.scrollHeight;
+  });
+  inp.focus();
+}
+
+function appendTerm(out,txt,cls){
+  var s=document.createElement('span'); if(cls) s.className=cls;
+  s.textContent=txt+'\n'; out.appendChild(s);
+}
+
+function runCmd(out,cmd){
+  var cmds=DATA.termCmds[__lang]||DATA.termCmds.pt;
+  if(cmd==='clear'){out.innerHTML=''; return;}
+  if(cmd==='linkedin'){window.open('https://linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9','_blank'); appendTerm(out,cmds.linkedin||'','t-info'); return;}
+  if(cmd==='github'){window.open('https://github.com/NathaliaGF','_blank'); appendTerm(out,cmds.github||'','t-info'); return;}
+  var r=cmds[cmd];
+  if(r!==undefined) appendTerm(out,r,'t-info');
+  else appendTerm(out,(cmd?'bash: '+cmd+': command not found\nTry "help"':''),'t-err');
+}
+
+function startClock(){
+  function tick(){
+    var d=new Date();
+    var ck=document.getElementById('clock-display'); if(!ck) return;
+    ck.textContent=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+    var days=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+    var months=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+    ck.title=days[d.getDay()]+', '+d.getDate()+' de '+months[d.getMonth()]+' de '+d.getFullYear();
+  }
+  tick(); setInterval(tick,30000);
+}
+
+function initTray(){
+  function togglePopup(id){
+    var pop=document.getElementById(id);
+    var wasOpen=pop.classList.contains('open');
+    document.querySelectorAll('.tray-popup').forEach(function(p){p.classList.remove('open');});
+    if(!wasOpen) pop.classList.add('open');
+  }
+  document.getElementById('btn-bat').addEventListener('click',function(e){e.stopPropagation(); togglePopup('popup-battery');});
+  document.getElementById('btn-wifi').addEventListener('click',function(e){e.stopPropagation(); togglePopup('popup-wifi');});
+  document.getElementById('btn-player').addEventListener('click',function(e){e.stopPropagation(); togglePopup('player-popup');});
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.tray-popup').forEach(function(p){p.classList.remove('open');});
+  });
+  var wifiTryBtn=document.getElementById('wifi-try-btn');
+  if(wifiTryBtn) wifiTryBtn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var ch=document.getElementById('wifi-challenge');
+    ch.style.display='block';
+    setTimeout(function(){ var inp=document.getElementById('wifi-pw-input'); if(inp) inp.focus(); },50);
+  });
+  var wifiGo=document.getElementById('wifi-pw-go');
+  if(wifiGo) wifiGo.addEventListener('click',function(e){
+    e.stopPropagation();
+    var v=(document.getElementById('wifi-pw-input').value||'').toLowerCase().trim();
+    var fb=document.getElementById('wifi-feedback');
+    if(['nmap7','rootadmin','burp22','h4ckme'].indexOf(v)>=0){
+      fb.style.color='#16a34a'; fb.textContent='✅ Acesso concedido! Bem-vindo, hacker.';
+    } else {
+      fb.style.color='#dc2626'; fb.textContent='❌ Senha incorreta. Tente nmap, burp, root...';
+    }
+  });
+  var wifiInp=document.getElementById('wifi-pw-input');
+  if(wifiInp) wifiInp.addEventListener('keydown',function(e){ e.stopPropagation(); if(e.key==='Enter'&&wifiGo) wifiGo.click(); });
+}
+
+function showHint(){
+  var h=document.getElementById('hint');
+  try{ if(localStorage.getItem('ngos_seen')==='1') return; localStorage.setItem('ngos_seen','1'); }catch(e){}
+  h.classList.add('on');
+  setTimeout(function(){ h.classList.remove('on'); },22000);
+}
+
+document.getElementById('hint-x').addEventListener('click',function(){ document.getElementById('hint').classList.remove('on'); });
+document.getElementById('btn-lang').addEventListener('click',function(e){ e.stopPropagation(); applyLang(__lang==='en'?'pt':'en'); buildIcons(); buildStartMenu(); });
+document.getElementById('start-btn').addEventListener('click',function(e){ e.stopPropagation(); OS.toggleStart(); });
+document.addEventListener('click',function(e){ if(!e.target.closest('#startmenu')&&!e.target.closest('#start-btn')) OS.toggleStart(false); });
+
+document.getElementById('sm-lock').addEventListener('click',function(){
+  OS.toggleStart(false);
+  var lg=document.getElementById('login');
+  var ld=document.getElementById('xp-loading');
+  if(ld){ ld.classList.remove('on'); var fill=ld.querySelector('.xp-bar-fill'); if(fill) fill.style.animation='none'; }
+  lg.classList.remove('out'); lg.style.display='flex';
+});
+document.getElementById('sm-restart').addEventListener('click',function(){ OS.toggleStart(false); location.reload(); });
+document.getElementById('sm-shut').addEventListener('click',function(){
+  OS.toggleStart(false);
+  document.body.innerHTML='<div style="position:fixed;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;font-family:monospace;color:#e8a30c;font-size:20px;text-align:center"><div style="font-size:40px">⏻</div><div>É seguro desligar o computador.</div><button onclick="location.reload()" style="margin-top:20px;padding:10px 24px;background:#111;color:#e8a30c;border:1px solid #e8a30c;border-radius:6px;font-size:16px;cursor:pointer">Ligar novamente</button></div>';
+});
+document.getElementById('btn-winver').addEventListener('click',function(){ OS.openWin('win-winver'); });
+document.getElementById('ie-open').addEventListener('click',function(){ window.open('https://linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9','_blank'); });
+document.getElementById('ie-go').addEventListener('click',function(){ window.open('https://linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9','_blank'); });
+
+function doLogin(){
+  var ld=document.getElementById('xp-loading');
+  ld.classList.remove('on'); void ld.offsetWidth; ld.classList.add('on');
+  var fill=ld.querySelector('.xp-bar-fill');
+  if(fill){ fill.style.animation='none'; void fill.offsetWidth; fill.style.animation='xpload 1.8s ease-in-out forwards'; }
+  setTimeout(function(){
+    var lg=document.getElementById('login');
+    lg.classList.add('out');
+    setTimeout(function(){
+      lg.style.display='none';
+      var w=document.getElementById('win-about');
+      if(w&&!OS.isMobile()){
+        w.style.left=Math.round((window.innerWidth-520)/2)+'px';
+        w.style.top=Math.round((window.innerHeight-44-460)/2-30)+'px';
+      }
+      OS.openWin('win-about');
+      setTimeout(showHint,800);
+    },550);
+  },1900);
+}
+
+var lu=document.getElementById('login-user');
+lu.addEventListener('click',doLogin);
+lu.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); doLogin(); } });
+
+(function(){
+  var c=document.getElementById('clouds'); if(!c) return;
+  var canvas=document.createElement('canvas');
+  canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;opacity:.55';
+  c.appendChild(canvas);
+  function resize(){ canvas.width=canvas.offsetWidth; canvas.height=canvas.offsetHeight; }
+  resize(); window.addEventListener('resize',resize);
+  var ctx=canvas.getContext('2d');
+  var pts=[];
+  for(var i=0;i<55;i++) pts.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0003,vy:(Math.random()-.5)*.0003,r:Math.random()*1.5+.5});
+  function draw(){
+    var W=canvas.width,H=canvas.height;
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){
+      pts[i].x+=pts[i].vx; pts[i].y+=pts[i].vy;
+      if(pts[i].x<0||pts[i].x>1) pts[i].vx*=-1;
+      if(pts[i].y<0||pts[i].y>1) pts[i].vy*=-1;
+      for(var j=i+1;j<pts.length;j++){
+        var dx=(pts[i].x-pts[j].x)*W,dy=(pts[i].y-pts[j].y)*H,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<120){ ctx.beginPath(); ctx.moveTo(pts[i].x*W,pts[i].y*H); ctx.lineTo(pts[j].x*W,pts[j].y*H);
+          ctx.strokeStyle='rgba(30,100,220,'+(1-dist/120)*.18+')'; ctx.lineWidth=.6; ctx.stroke(); }
+      }
+    }
+    pts.forEach(function(p){
+      ctx.beginPath(); ctx.arc(p.x*W,p.y*H,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(60,140,255,.5)'; ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+(function(){
+  initLang();
+  buildDynamic();
+  buildIcons();
+  buildStartMenu();
+  OS.initWins();
+  OS.initKeyboard();
+  startClock();
+  initTray();
 })();
 </script>
 </body>
