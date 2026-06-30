@@ -132,10 +132,10 @@ a{color:var(--xp-blue);text-decoration:none}
 .tbtn{
   width:20px;height:20px;border-radius:50%;border:none;
   display:flex;align-items:center;justify-content:center;
-  font-size:10px;color:transparent;font-weight:700;
+  font-size:10px;color:rgba(0,0,0,.35);font-weight:700;
   transition:color .15s,filter .15s;position:relative;
 }
-.tbtn:hover{color:rgba(0,0,0,.6);filter:brightness(1.1)}
+.tbtn:hover{color:rgba(0,0,0,.7);filter:brightness(1.1)}
 .tbtn.cl{background:radial-gradient(circle at 40% 35%,#ff6b6b,#c0392b)}
 .tbtn.mx{background:radial-gradient(circle at 40% 35%,#ffd93d,#e67e22)}
 .tbtn.mn{background:radial-gradient(circle at 40% 35%,#6bcb77,#27ae60)}
@@ -289,6 +289,7 @@ a{color:var(--xp-blue);text-decoration:none}
 .popup-btn{width:100%;background:var(--xp-blue);color:#fff;border:none;border-radius:7px;
   padding:8px;font-size:12.5px;font-weight:600;cursor:pointer;transition:filter .15s}
 .popup-btn:hover{filter:brightness(1.12)}
+#wifi-pw-input:focus{border-color:#0078d4!important;}
 
 #taskbar{
   position:fixed;left:0;right:0;bottom:0;height:var(--tb-h);z-index:var(--z-taskbar);
@@ -426,14 +427,13 @@ a{color:var(--xp-blue);text-decoration:none}
 #hint-x{background:none;border:none;color:rgba(255,255,255,.6);font-size:16px;cursor:pointer;padding:0 2px}
 #hint-x:hover{color:#fff}
 
-#player-popup{width:300px;right:6px;bottom:calc(var(--tb-h) + 8px);position:fixed}
-.player-note{font-size:11px;color:var(--muted);line-height:1.4}
 
 .sep{height:1px;background:rgba(0,0,0,.08);margin:12px 0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .win-status{padding:5px 12px;background:rgba(0,0,0,.04);border-top:1px solid rgba(0,0,0,.06);
   font-size:11px;color:var(--muted);flex:none}
 
+@keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:700px){
   .win.open{inset:4px 4px auto!important;left:4px!important;top:4px!important;
     width:calc(100vw - 8px)!important;max-height:calc(100vh - var(--tb-h) - 12px);overflow:hidden}
@@ -462,7 +462,7 @@ a{color:var(--xp-blue);text-decoration:none}
 
 <section class="win" id="win-about" style="top:60px;left:160px;width:520px">
   <div class="titlebar"><span class="ticon">👤</span><span class="tname" data-i18n="w.about">Sobre</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min" aria-label="Minimizar"></button><button class="tbtn mx" data-act="max" aria-label="Maximizar"></button><button class="tbtn cl" data-act="close" aria-label="Fechar"></button></div></div>
+    <div class="tbtns"><button class="tbtn mn" data-act="min" aria-label="Minimizar">−</button><button class="tbtn mx" data-act="max" aria-label="Maximizar">⬜</button><button class="tbtn cl" data-act="close" aria-label="Fechar">✕</button></div></div>
   <div class="menubar"><span data-mb="winver" data-i18n="mb.about">Sobre o sistema</span></div>
   <div class="wbody">
     <div class="about-card">
@@ -481,27 +481,27 @@ a{color:var(--xp-blue);text-decoration:none}
 
 <section class="win" id="win-winver" style="top:140px;left:340px;width:360px">
   <div class="titlebar"><span class="ticon">🖥️</span><span class="tname">winver</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn cl" data-act="close"></button></div></div>
+    <div class="tbtns"><button class="tbtn mn" data-act="min">−</button><button class="tbtn cl" data-act="close">✕</button></div></div>
   <div class="wbody">
     <div class="winver-body">
       <div class="winver-logo">🪟</div>
       <div class="winver-title">NathaliaOS Portfolio Edition</div>
       <div class="winver-sub">Versão 2.0 · Build 2026</div>
       <div class="sep"></div>
-      <div style="font-size:13px;color:var(--muted)">Feito com ❤️ por Nathalia Gomes Felipe<br><br>Brasil · SC</div>
+      <div style="font-size:13px;color:var(--muted)">Feito com ❤️ por Nathalia Gomes Felipe<br><br></div>
     </div>
   </div>
 </section>
 
 <section class="win" id="win-proj" style="top:50px;left:220px;width:640px">
   <div class="titlebar"><span class="ticon">📁</span><span class="tname" data-i18n="w.proj">Projetos</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+    <div class="tbtns"><button class="tbtn mn" data-act="min">−</button><button class="tbtn mx" data-act="max">⬜</button><button class="tbtn cl" data-act="close">✕</button></div></div>
   <div class="wbody"><div class="proj-grid" id="proj-grid"></div></div>
 </section>
 
 <section class="win" id="win-ars" style="top:70px;left:180px;width:560px">
   <div class="titlebar"><span class="ticon">🛡️</span><span class="tname" data-i18n="w.ars">Arsenal técnico</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+    <div class="tbtns"><button class="tbtn mn" data-act="min">−</button><button class="tbtn mx" data-act="max">⬜</button><button class="tbtn cl" data-act="close">✕</button></div></div>
   <div class="wbody">
     <div class="ars-tabs" id="ars-tabs"></div>
     <div id="ars-panels"></div>
@@ -510,13 +510,13 @@ a{color:var(--xp-blue);text-decoration:none}
 
 <section class="win" id="win-xp" style="top:60px;left:200px;width:560px">
   <div class="titlebar"><span class="ticon">📋</span><span class="tname" data-i18n="w.xp">Experiência</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+    <div class="tbtns"><button class="tbtn mn" data-act="min">−</button><button class="tbtn mx" data-act="max">⬜</button><button class="tbtn cl" data-act="close">✕</button></div></div>
   <div class="wbody"><div class="timeline" id="timeline"></div></div>
 </section>
 
 <section class="win" id="win-term" style="top:80px;left:240px;width:580px">
   <div class="titlebar"><span class="ticon">💻</span><span class="tname">Terminal: nathalia@nathaliaos</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+    <div class="tbtns"><button class="tbtn mn" data-act="min">−</button><button class="tbtn mx" data-act="max">⬜</button><button class="tbtn cl" data-act="close">✕</button></div></div>
   <div class="wbody">
     <div class="term-out" id="term-out"></div>
     <div class="term-in-row"><span class="term-prompt">nathalia@nathaliaos:~$</span><input class="term-input" id="term-input" autocomplete="off" spellcheck="false" aria-label="Terminal input"/></div>
@@ -525,7 +525,7 @@ a{color:var(--xp-blue);text-decoration:none}
 
 <section class="win" id="win-contact" style="top:90px;left:260px;width:400px">
   <div class="titlebar"><span class="ticon">✉️</span><span class="tname" data-i18n="w.ct">Contato</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn cl" data-act="close"></button></div></div>
+    <div class="tbtns"><button class="tbtn mn" data-act="min">−</button><button class="tbtn cl" data-act="close">✕</button></div></div>
   <div class="wbody">
     <div class="contact-lead" data-i18n="ct.lead">Aberta a vagas de Security Analyst, Infra, SOC, Pentest e DevSecOps.</div>
     <div class="ct-links" id="ct-links"></div>
@@ -534,7 +534,7 @@ a{color:var(--xp-blue);text-decoration:none}
 
 <section class="win" id="win-ie" style="top:50px;left:140px;width:600px">
   <div class="titlebar"><span class="ticon">🌐</span><span class="tname">Internet: NathaliaOS</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn mx" data-act="max"></button><button class="tbtn cl" data-act="close"></button></div></div>
+    <div class="tbtns"><button class="tbtn mn" data-act="min">−</button><button class="tbtn mx" data-act="max">⬜</button><button class="tbtn cl" data-act="close">✕</button></div></div>
   <div class="ie-bar">
     <button class="ie-back">◀</button><button class="ie-fwd">▶</button>
     <span class="ie-url">https://linkedin.com/in/nathalia-gomes-felipe-32aa9b2a9</span>
@@ -554,7 +554,7 @@ a{color:var(--xp-blue);text-decoration:none}
 
 <section class="win" id="win-trash" style="top:100px;left:280px;width:380px">
   <div class="titlebar"><span class="ticon">🗑️</span><span class="tname" data-i18n="w.trash">Lixeira</span>
-    <div class="tbtns"><button class="tbtn mn" data-act="min"></button><button class="tbtn cl" data-act="close"></button></div></div>
+    <div class="tbtns"><button class="tbtn mn" data-act="min">−</button><button class="tbtn cl" data-act="close">✕</button></div></div>
   <div class="wbody">
     <div class="trash-body">
       <div class="trash-ico">🗑️</div>
@@ -564,25 +564,65 @@ a{color:var(--xp-blue);text-decoration:none}
   </div>
 </section>
 
+<div id="toast-container" style="position:fixed;top:16px;right:16px;z-index:9990;display:flex;flex-direction:column;gap:8px;pointer-events:none"></div>
+
 <div class="tray-popup" id="popup-battery" style="right:80px;bottom:calc(var(--tb-h) + 8px)">
   <div class="popup-title" data-i18n="bat.title">Status da Bateria</div>
   <div class="popup-item">🔋 <b>100%</b></div>
   <div class="popup-item" style="color:var(--muted);font-size:12px" data-i18n="bat.msg">100% online. Sem interrupções previstas.</div>
 </div>
 
-<div class="tray-popup" id="popup-wifi" style="right:110px;bottom:calc(var(--tb-h) + 8px)" onclick="event.stopPropagation()">
-  <div class="popup-title" data-i18n="wifi.title">Redes encontradas</div>
-  <div class="popup-net">📶 DÚVIDOVOCÊACERTARASENHA</div>
-  <div class="popup-pw-note" data-i18n="wifi.pw">Senha: <b>[ oculta ]</b></div>
-  <button class="popup-btn" id="wifi-try-btn" data-i18n="wifi.btn">🔑 Tentar descobrir</button>
-  <div id="wifi-challenge" style="display:none;margin-top:10px">
-    <div style="font-size:12px;color:var(--muted);margin-bottom:6px" data-i18n="wifi.enter">Digite a senha:</div>
-    <div style="display:flex;gap:6px;margin-bottom:6px">
-      <input id="wifi-pw-input" type="password" placeholder="senha..." autocomplete="off"
-        style="flex:1;padding:6px 8px;border:1.5px solid rgba(0,0,120,.2);border-radius:6px;font-size:12px;outline:none;font-family:var(--mono);background:#fff;color:#334">
-      <button id="wifi-pw-go" style="background:var(--xp-blue);color:#fff;border:none;border-radius:6px;padding:6px 10px;font-size:12px;cursor:pointer;font-weight:600">OK</button>
+<div id="popup-wifi" style="position:fixed;right:6px;bottom:calc(var(--tb-h)+8px);width:320px;display:none;z-index:var(--z-popup);font-family:var(--ui);border-radius:10px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1)" onclick="event.stopPropagation()">
+  <div style="background:#1a1a1a;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08)">
+    <div style="display:flex;align-items:center;gap:8px">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0078d4" stroke-width="2.5"><path d="M1.5 8.5a18 18 0 0 1 21 0M5 12a13 13 0 0 1 14 0M8.5 15.5a8 8 0 0 1 7 0M12 19h.01"/></svg>
+      <span style="color:#fff;font-size:13px;font-weight:600">Wi-Fi</span>
     </div>
-    <div id="wifi-feedback" style="font-size:11.5px;min-height:16px"></div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div id="wifi-xp-badge" style="display:none;background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.3);border-radius:20px;padding:2px 8px;font-size:11px;color:#fbbf24;font-weight:600"></div>
+      <button id="wifi-close-btn" style="background:none;border:none;color:rgba(255,255,255,.4);font-size:16px;cursor:pointer;padding:0;line-height:1">✕</button>
+    </div>
+  </div>
+  <div style="background:#222;padding:6px 0;max-height:280px;overflow-y:auto" id="wifi-network-list"></div>
+  <div id="wifi-connect-panel" style="background:#1a1a1a;padding:14px;border-top:1px solid rgba(255,255,255,.08);display:none">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <button id="wifi-back-btn" style="background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:18px;padding:0;line-height:1">←</button>
+      <div>
+        <div id="wifi-conn-name" style="color:#fff;font-size:13px;font-weight:600;font-family:var(--mono)"></div>
+        <div id="wifi-conn-meta" style="color:rgba(255,255,255,.4);font-size:11px;margin-top:1px"></div>
+      </div>
+    </div>
+    <div id="wifi-saved-panel" style="display:none;text-align:center;padding:8px 0 4px">
+      <div style="color:#4ade80;font-size:12.5px;margin-bottom:10px">✅ Senha salva · Conectado anteriormente</div>
+      <button id="wifi-auto-btn" style="width:100%;background:#0078d4;color:#fff;border:none;border-radius:5px;padding:9px;font-size:12.5px;font-weight:600;cursor:pointer">Conectar automaticamente</button>
+    </div>
+    <div id="wifi-input-panel">
+      <div style="font-size:11.5px;color:rgba(255,255,255,.6);margin-bottom:8px">Insira a chave de segurança da rede:</div>
+      <div style="display:flex;gap:6px;margin-bottom:8px">
+        <input id="wifi-pw-input" type="password" placeholder="Senha da rede..." autocomplete="off"
+          style="flex:1;padding:8px 10px;border:1px solid rgba(255,255,255,.15);border-radius:5px;font-size:12px;outline:none;font-family:var(--mono);background:#2d2d2d;color:#fff;caret-color:#0078d4">
+        <button id="wifi-pw-go" style="background:#0078d4;color:#fff;border:none;border-radius:5px;padding:8px 14px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">Conectar</button>
+      </div>
+      <div id="wifi-feedback" style="font-size:11.5px;min-height:18px;line-height:1.5"></div>
+      <div id="wifi-hint" style="font-size:11px;color:rgba(255,255,255,.38);margin-top:5px;min-height:14px;font-family:var(--mono);line-height:1.5;font-style:italic"></div>
+      <div id="wifi-reveal-row" style="display:none;margin-top:8px">
+        <button id="wifi-reveal-btn" style="background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.25);border-radius:5px;padding:6px 12px;font-size:11.5px;color:#fbbf24;cursor:pointer;width:100%">💡 Revelar uma letra</button>
+        <div id="wifi-reveal-display" style="font-family:var(--mono);font-size:16px;color:#fbbf24;text-align:center;margin-top:8px;letter-spacing:4px"></div>
+      </div>
+    </div>
+  </div>
+  <div id="wifi-progress-bar" style="background:#1a1a1a;padding:10px 14px;border-top:1px solid rgba(255,255,255,.06)">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+      <span style="color:rgba(255,255,255,.45);font-size:10.5px;letter-spacing:.5px;text-transform:uppercase">Progresso</span>
+      <span id="wifi-xp-total" style="color:#fbbf24;font-size:11px;font-weight:600">0 XP</span>
+    </div>
+    <div style="background:rgba(255,255,255,.08);border-radius:4px;height:5px;overflow:hidden">
+      <div id="wifi-xp-bar" style="height:100%;background:linear-gradient(90deg,#0078d4,#4ade80);border-radius:4px;width:0%;transition:width .6s ease"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:6px">
+      <span id="wifi-nets-done" style="color:rgba(255,255,255,.35);font-size:10.5px">0/5 redes</span>
+      <span id="wifi-achiev-count" style="color:rgba(255,255,255,.35);font-size:10.5px">0 conquistas</span>
+    </div>
   </div>
 </div>
 
@@ -669,6 +709,7 @@ a{color:var(--xp-blue);text-decoration:none}
 </noscript>
 
 <script>
+
 var DATA = {
   favTechs:['Python','Bash','SELinux','Zabbix','Docker','Nmap','Wireshark','MITRE ATT&CK','PostgreSQL'],
   projects:[
@@ -766,9 +807,8 @@ var I18N = {
       'trash.msg':'The Recycle Bin is empty.',
     'trash.sub':'"Just like bugs in production (at least I hope 😂)"\n\nrm -rf /bugs 2>/dev/null',
     'bat.title':'Battery Status','bat.msg':'100% online. No interruptions expected.',
-    'wifi.title':'Networks found','wifi.pw':'Password: <b>[ hidden ]</b>',
-    'wifi.enter':'Enter the password:','wifi.btn':'🔑 Try to find out',
-    'player.note':'Music player coming soon.\nUnder construction 🎧',
+    'wifi.title':'Wi-Fi','wifi.protected':'Protected','wifi.connected':'Connected','wifi.saved':'Password saved','wifi.progress':'Progress',
+    
     'login.instr':'To begin, click your user name',
     'login.role':'Infra · Security · Dev',
     'login.loading':'Loading personal settings...',
@@ -792,6 +832,7 @@ function applyLang(lang){
   var termOut=document.getElementById('term-out');
   if(termOut) termOut.innerHTML='';
   if(document.getElementById('win-term').classList.contains('open')) initTerm();
+  if(typeof WG!=='undefined') WG.refreshList();
   buildDynamic();
   try{ sessionStorage.setItem('ngos_lang',lang); }catch(e){}
 }
@@ -1114,37 +1155,287 @@ function startClock(){
 
 function initTray(){
   function togglePopup(id){
-    var pop=document.getElementById(id);
-    var wasOpen=pop.classList.contains('open');
-    document.querySelectorAll('.tray-popup').forEach(function(p){p.classList.remove('open');});
-    if(!wasOpen) pop.classList.add('open');
+    var pop=document.getElementById(id); if(!pop) return;
+    var wasOpen=pop.style.display==='block';
+    document.querySelectorAll('.tray-popup').forEach(function(p){p.classList.remove('open');p.style.display='none';});
+    if(!wasOpen){ pop.classList.add('open'); pop.style.display='block'; }
   }
   document.getElementById('btn-bat').addEventListener('click',function(e){e.stopPropagation(); togglePopup('popup-battery');});
-  document.getElementById('btn-wifi').addEventListener('click',function(e){e.stopPropagation(); togglePopup('popup-wifi');});
-  document.getElementById('btn-player').addEventListener('click',function(e){e.stopPropagation(); togglePopup('player-popup');});
+  document.getElementById('btn-wifi').addEventListener('click',function(e){ e.stopPropagation(); WG.open(); });
+  document.getElementById('btn-player').addEventListener('click',function(e){
+    e.stopPropagation();
+    var pp=document.getElementById('player-popup');
+    var wasOpen=pp.style.display==='block';
+    document.querySelectorAll('.tray-popup').forEach(function(p){p.classList.remove('open');p.style.display='none';});
+    if(!wasOpen){ pp.style.display='block'; }
+  });
   document.addEventListener('click',function(){
-    document.querySelectorAll('.tray-popup').forEach(function(p){p.classList.remove('open');});
+    document.querySelectorAll('.tray-popup').forEach(function(p){p.classList.remove('open');p.style.display='none';});
   });
-  var wifiTryBtn=document.getElementById('wifi-try-btn');
-  if(wifiTryBtn) wifiTryBtn.addEventListener('click',function(e){
-    e.stopPropagation();
-    var ch=document.getElementById('wifi-challenge');
-    ch.style.display='block';
-    setTimeout(function(){ var inp=document.getElementById('wifi-pw-input'); if(inp) inp.focus(); },50);
-  });
-  var wifiGo=document.getElementById('wifi-pw-go');
-  if(wifiGo) wifiGo.addEventListener('click',function(e){
-    e.stopPropagation();
-    var v=(document.getElementById('wifi-pw-input').value||'').toLowerCase().trim();
-    var fb=document.getElementById('wifi-feedback');
-    if(['nmap7','rootadmin','burp22','h4ckme'].indexOf(v)>=0){
-      fb.style.color='#16a34a'; fb.textContent='✅ Acesso concedido! Bem-vindo, hacker.';
-    } else {
-      fb.style.color='#dc2626'; fb.textContent='❌ Senha incorreta. Tente nmap, burp, root...';
+
+  var WG=(function(){
+    var NETS=[
+      {id:'linux',  ssid:'Porta dos Fundos', ssidEN:'Back Door',         diff:'🟢 Fácil', diffEN:'🟢 Easy',    xp:50,  pwd:'sudo123',
+       hints:['No Linux quase tudo começa com um comando.','Ele pede permissão de administrador.','Quatro letras seguidas de três números.','Começa com "sudo".'],
+       hintsEN:['Almost everything in Linux starts with a command.','It requests administrator permission.','Four letters followed by three numbers.','Starts with "sudo".']},
+      {id:'root',   ssid:'Deus do Sistema', ssidEN:'God of the System',  diff:'🟡 Médio', diffEN:'🟡 Medium',  xp:100, pwd:'rootroot',
+       hints:['UID = 0.','O nome desse usuário é igual à pasta dele no sistema.','Uma palavra repetida duas vezes.','O mais poderoso do Linux, duas vezes.'],
+       hintsEN:['UID = 0.','This user name is the same as their home folder.','One word repeated twice.','The most powerful Linux user, said twice.']},
+      {id:'docker', ssid:'Caixas Empilhadas', ssidEN:'Stacked Boxes',    diff:'🟡 Médio', diffEN:'🟡 Medium',  xp:100, pwd:'dockercompose',
+       hints:['YAML.','Sobe tudo de uma vez.','Docker + ______','Antes do "docker compose" existia outro comando.'],
+       hintsEN:['YAML.','Spins everything up at once.','Docker + ______','Before "docker compose" there was another command.']},
+      {id:'owasp',  ssid:'Top das Vulneráveis', ssidEN:'Top Vulnerabilities', diff:'🔴 Difícil', diffEN:'🔴 Hard', xp:300, pwd:'owasp10',
+       hints:['Vulnerabilidades Web.','Lista famosa da comunidade.','Top 10.','Segurança ofensiva e defensiva.'],
+       hintsEN:['Web vulnerabilities.','A well-known community list.','Top 10.','Offensive and defensive security.']},
+      {id:'danger', ssid:'Não Execute em Prod', ssidEN:'Do Not Run in Prod', diff:'🔴 Difícil', diffEN:'🔴 Hard', xp:300, pwd:'rm-rf/',
+       hints:['É um comando perigoso.','Remove arquivos.','O mais temido do Linux.','Remove praticamente tudo do sistema.'],
+       hintsEN:['It is a dangerous command.','Removes files.','The most feared Linux command.','Deletes practically everything on the system.']}
+    ];
+    var ACHIEV=[
+      {id:'root_all',  icon:'🏆', title:'Root Access Granted', desc:'Conectar em todas as redes.',         check:function(s){return s.done.length===5;}},
+      {id:'linux1',    icon:'🐧', title:'Linux Lover',          desc:'Acertar Porta dos Fundos na 1ª tentativa.', descEN:'Crack Back Door on the first try.',check:function(s){return s.firstTry.indexOf('linux')>=0;}},
+      {id:'docker_ok', icon:'🐳', title:'Container Master',     desc:'Completar Caixas Empilhadas.', descEN:'Complete Stacked Boxes.',check:function(s){return s.done.indexOf('docker')>=0;}},
+      {id:'owasp_ok',  icon:'🛡️', title:'Security Researcher', desc:'Completar Top das Vulneráveis.', descEN:'Complete Top Vulnerabilities.',check:function(s){return s.done.indexOf('owasp')>=0;}},
+      {id:'no_hint',   icon:'💀', title:'Living Dangerously',   desc:'Acertar Não Execute em Prod sem dicas.', descEN:'Crack Do Not Run in Prod without hints.',check:function(s){return s.noHint.indexOf('danger')>=0;}},
+      {id:'speed',     icon:'⚡', title:'Speed Runner',          desc:'Conectar em 3 redes sem errar.',      check:function(s){return s.streak>=3;}},
+      {id:'all_hints', icon:'🧠', title:'Hint Collector',       desc:'Ver todas as dicas de uma rede.',     check:function(s){return s.allHints.length>0;}},
+      {id:'first',     icon:'🌐', title:'Primeiro Acesso',      desc:'Conectar na primeira rede.',           check:function(s){return s.done.length>=1;}}
+    ];
+    var MAX_XP=850;
+    var _cur=null, _attempts=0, _shownHints=[], _revealIdx=0, _streak=0, _noHintCur=true;
+
+    function loadState(){
+      try{return JSON.parse(localStorage.getItem('ngos_wifi')||'{}');}catch(e){return {};}
     }
+    function saveState(s){ try{localStorage.setItem('ngos_wifi',JSON.stringify(s));}catch(e){} }
+    function getState(){
+      var s=loadState();
+      if(!s.xp) s.xp=0;
+      if(!s.done) s.done=[];
+      if(!s.connected) s.connected=null;
+      if(!s.savedNets) s.savedNets=[];
+      if(!s.achievs) s.achievs=[];
+      if(!s.firstTry) s.firstTry=[];
+      if(!s.noHint) s.noHint=[];
+      if(!s.allHints) s.allHints=[];
+      if(!s.streak) s.streak=0;
+      return s;
+    }
+
+    function toast(icon,title,sub,color){
+      var c=document.getElementById('toast-container'); if(!c) return;
+      var t=document.createElement('div');
+      t.style.cssText='background:rgba(20,20,30,.96);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;min-width:240px;max-width:300px;box-shadow:0 8px 24px rgba(0,0,0,.5);pointer-events:auto;transition:opacity .4s,transform .4s;opacity:0;transform:translateX(20px)';
+      t.innerHTML='<div style="display:flex;align-items:center;gap:10px"><div style="font-size:22px;line-height:1">'+icon+'</div><div><div style="color:'+(color||'#fff')+';font-size:13px;font-weight:600">'+title+'</div>'+(sub?'<div style="color:rgba(255,255,255,.5);font-size:11.5px;margin-top:2px">'+sub+'</div>':'')+'</div></div>';
+      c.appendChild(t);
+      requestAnimationFrame(function(){t.style.opacity='1';t.style.transform='translateX(0)';});
+      setTimeout(function(){t.style.opacity='0';t.style.transform='translateX(20px)';setTimeout(function(){t.remove();},400);},3500);
+    }
+
+    function checkAchievs(s){
+      ACHIEV.forEach(function(a){
+        if(s.achievs.indexOf(a.id)<0 && a.check(s)){
+          s.achievs.push(a.id);
+          var aDesc=(__lang==='en'&&a.descEN?a.descEN:a.desc);
+          var aTitle=(__lang==='en'?'Achievement: ':'Conquista: ')+a.title;
+          setTimeout(function(){ toast(a.icon,aTitle,aDesc,'#fbbf24'); },400);
+        }
+      });
+    }
+
+    function updateUI(){
+      var s=getState();
+      var xpPct=Math.min(s.xp/MAX_XP*100,100);
+      var bar=document.getElementById('wifi-xp-bar');
+      var tot=document.getElementById('wifi-xp-total');
+      var nd=document.getElementById('wifi-nets-done');
+      var ac=document.getElementById('wifi-achiev-count');
+      var badge=document.getElementById('wifi-xp-badge');
+      if(bar) bar.style.width=xpPct+'%';
+      if(tot) tot.textContent=s.xp+' XP';
+      if(nd) nd.textContent=s.done.length+'/5 redes';
+      if(ac) ac.textContent=s.achievs.length+' conquistas';
+      if(badge&&s.xp>0){badge.style.display='block';badge.textContent=s.xp+' XP';}
+      renderNetList(s);
+    }
+
+    function diffColor(d){
+      if(d.indexOf('Fácil')>=0||d.indexOf('Easy')>=0) return '#4ade80';
+      if(d.indexOf('Médio')>=0||d.indexOf('Medium')>=0) return '#fbbf24';
+      return '#f87171';
+    }
+
+    function renderNetList(s){
+      var el=document.getElementById('wifi-network-list'); if(!el) return;
+      el.innerHTML='';
+      NETS.forEach(function(n){
+        var done=s.done.indexOf(n.id)>=0;
+        var isCon=s.connected===n.id;
+        var isSaved=s.savedNets.indexOf(n.id)>=0;
+        var row=document.createElement('div');
+        row.style.cssText='padding:9px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:background .12s;border-left:2px solid '+(isCon?'#0078d4':'transparent');
+        row.onmouseover=function(){row.style.background='rgba(255,255,255,.06)';};
+        row.onmouseout=function(){row.style.background='';};
+        row.innerHTML=
+          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="'+(isCon?'#0078d4':'#666')+'" stroke-width="2.5"><path d="M1.5 8.5a18 18 0 0 1 21 0M5 12a13 13 0 0 1 14 0M8.5 15.5a8 8 0 0 1 7 0M12 19h.01"/></svg>'
+          +'<div style="flex:1;min-width:0">'
+            +'<div style="display:flex;align-items:center;gap:6px">'
+              +'<span style="color:#fff;font-size:12.5px;font-family:var(--mono);font-weight:'+(isCon?'600':'400')+'">'+(__lang==='en'&&n.ssidEN?n.ssidEN:n.ssid)+'</span>'
+              +(done?'<span style="color:#4ade80;font-size:11px">✓</span>':(isSaved?'<span title="Senha salva" style="font-size:11px">🔑</span>':''))
+            +'</div>'
+            +'<div style="display:flex;align-items:center;gap:6px;margin-top:2px">'
+              +'<span style="color:rgba(255,255,255,.3);font-size:10.5px">Protegida</span>'
+              +'<span style="color:rgba(255,255,255,.15);font-size:10px">•</span>'
+              +'<span style="color:'+diffColor(__lang==='en'&&n.diffEN?n.diffEN:n.diff)+';font-size:10.5px;font-weight:500">'+(__lang==='en'&&n.diffEN?n.diffEN:n.diff)+'</span>'
+              +(isCon?'<span style="color:#0078d4;font-size:10.5px;margin-left:2px">Conectado</span>':'')
+            +'</div>'
+          +'</div>'
+          +'<span style="color:rgba(255,255,255,.2);font-size:11px;font-weight:600">+'+n.xp+' XP</span>';
+        row.addEventListener('click',function(){ openNet(n,s); });
+        el.appendChild(row);
+      });
+    }
+
+    function openNet(n,s){
+      _cur=n; _attempts=0; _shownHints=[]; _revealIdx=0; _noHintCur=true;
+      var isSaved=(s.savedNets.indexOf(n.id)>=0)||(s.done.indexOf(n.id)>=0);
+      document.getElementById('wifi-conn-name').textContent=(__lang==='en'&&n.ssidEN?n.ssidEN:n.ssid);
+      document.getElementById('wifi-conn-meta').textContent=(__lang==='en'&&n.diffEN?n.diffEN:n.diff)+' · +'+n.xp+' XP';
+      document.getElementById('wifi-feedback').textContent='';
+      document.getElementById('wifi-hint').textContent='';
+      document.getElementById('wifi-reveal-row').style.display='none';
+      document.getElementById('wifi-reveal-display').textContent='';
+      var inp=document.getElementById('wifi-pw-input'); if(inp){inp.value='';inp.disabled=false;}
+      var go=document.getElementById('wifi-pw-go'); if(go){go.disabled=false;go.textContent='Conectar';}
+      document.getElementById('wifi-saved-panel').style.display=isSaved?'block':'none';
+      document.getElementById('wifi-input-panel').style.display=isSaved?'none':'block';
+      document.getElementById('wifi-network-list').style.display='none';
+      document.getElementById('wifi-progress-bar').style.display='none';
+      document.getElementById('wifi-connect-panel').style.display='block';
+      setTimeout(function(){ var i=document.getElementById('wifi-pw-input'); if(i&&!isSaved) i.focus(); },60);
+    }
+
+    function backToList(){
+      document.getElementById('wifi-connect-panel').style.display='none';
+      document.getElementById('wifi-network-list').style.display='block';
+      document.getElementById('wifi-progress-bar').style.display='block';
+      _cur=null;
+    }
+
+    function autoConnect(){
+      if(!_cur) return;
+      var s=getState(); s.connected=_cur.id; saveState(s);
+      document.getElementById('wifi-feedback').innerHTML='<span style="color:#4ade80">✅ Reconectado com sucesso!</span>';
+      setTimeout(function(){ backToList(); updateUI(); },900);
+    }
+
+    function tryConnect(){
+      if(!_cur) return;
+      var inp=document.getElementById('wifi-pw-input');
+      var v=(inp?inp.value||'':'').toLowerCase().trim();
+      var fb=document.getElementById('wifi-feedback');
+      var hint=document.getElementById('wifi-hint');
+      var s=getState();
+
+      if(v===_cur.pwd.toLowerCase()){
+        var prevCon=s.connected;
+        s.connected=_cur.id;
+        if(s.savedNets.indexOf(_cur.id)<0) s.savedNets.push(_cur.id);
+        var isNew=s.done.indexOf(_cur.id)<0;
+        if(isNew){
+          s.done.push(_cur.id);
+          s.xp+=_cur.xp;
+          if(_attempts===0) s.firstTry.push(_cur.id);
+          if(_noHintCur) s.noHint.push(_cur.id);
+          _streak++; if(_streak>s.streak) s.streak=_streak;
+          checkAchievs(s);
+          toast('⚡','+'+_cur.xp+' XP','Conectado: '+_cur.ssid,'#4ade80');
+          if(s.done.length===5) setTimeout(function(){ allDone(); },800);
+        }
+        saveState(s);
+        fb.innerHTML='<span style="color:#4ade80">✅ Acesso concedido! Conectado a '+_cur.ssid+'</span>';
+        hint.textContent='';
+        if(inp) inp.disabled=true;
+        var go=document.getElementById('wifi-pw-go');
+        if(go){go.disabled=true;go.textContent='Conectado';}
+        setTimeout(function(){ backToList(); updateUI(); },1000);
+      } else {
+        _attempts++; _streak=0; _noHintCur=false;
+        fb.innerHTML='<span style="color:#f87171">❌ Chave de segurança incorreta.</span>';
+        if(inp){ inp.style.borderColor='#f87171'; setTimeout(function(){if(inp)inp.style.borderColor='rgba(255,255,255,.15)';},600); inp.value=''; setTimeout(function(){if(inp)inp.focus();},50); }
+        var hintArr=(__lang==='en'&&_cur.hintsEN?_cur.hintsEN:_cur.hints);
+        var avail=hintArr.filter(function(_,i){ return _shownHints.indexOf(i)<0; });
+        if(avail.length>0){
+          var ri=Math.floor(Math.random()*avail.length);
+          var hIdx=hintArr.indexOf(avail[ri]);
+          _shownHints.push(hIdx);
+          hint.textContent='💡 '+avail[ri];
+          if(_shownHints.length===hintArr.length){ var st=getState(); st.allHints.push(_cur.id); saveState(st); checkAchievs(st); }
+        } else {
+          var fallbacks=['Você está chegando perto...','Talvez reúna todas as pistas.','Essa senha é bem conhecida na área.','A resposta está praticamente na sua frente.'];
+          hint.textContent='💬 '+fallbacks[Math.floor(Math.random()*fallbacks.length)];
+        }
+        if(_attempts>=8) document.getElementById('wifi-reveal-row').style.display='block';
+      }
+    }
+
+    function revealLetter(){
+      if(!_cur) return;
+      var pwd=_cur.pwd;
+      var disp=document.getElementById('wifi-reveal-display');
+      var cur=disp.textContent||'';
+      var arr=[];
+      for(var i=0;i<pwd.length;i++){
+        if(cur[i*2]&&cur[i*2]!=='_') arr.push(pwd[i]);
+        else if(i===_revealIdx) arr.push(pwd[i]);
+        else arr.push('_');
+      }
+      _revealIdx++;
+      disp.textContent=arr.join(' ');
+      if(_revealIdx>=pwd.length) var rb=document.getElementById('wifi-reveal-btn'); if(rb) rb.disabled=true;
+    }
+
+    function allDone(){
+      toast('🏆','Root Access Granted!','Você conectou em todas as redes. Acesso total ao sistema.','#fbbf24');
+      setTimeout(function(){
+        if(typeof OS!=='undefined') OS.openWin('win-winver');
+      },2000);
+    }
+
+    function open(){
+      var pw=document.getElementById('popup-wifi');
+      if(!pw) return;
+      var wasOpen=pw.style.display==='block';
+      document.querySelectorAll('.tray-popup').forEach(function(p){p.classList.remove('open');p.style.display='none';});
+      if(!wasOpen){
+        pw.style.display='block';
+        backToList();
+        updateUI();
+      }
+    }
+
+    function close(){
+      var pw=document.getElementById('popup-wifi');
+      if(pw){ pw.style.display='none'; pw.classList.remove('open'); }
+    }
+
+    document.getElementById('wifi-pw-input').addEventListener('keydown',function(e){
+      e.stopPropagation(); if(e.key==='Enter') tryConnect();
+    });
+    document.getElementById('wifi-close-btn').addEventListener('click', function(){ close(); });
+    document.getElementById('wifi-back-btn').addEventListener('click', function(){ backToList(); });
+    document.getElementById('wifi-pw-go').addEventListener('click', function(){ tryConnect(); });
+    document.getElementById('wifi-auto-btn').addEventListener('click', function(){ autoConnect(); });
+    document.getElementById('wifi-reveal-btn').addEventListener('click', function(){ revealLetter(); });
+
+    function refreshList(){ backToList(); updateUI(); }
+    updateUI();
+    return {open:open,close:close,backToList:backToList,tryConnect:tryConnect,revealLetter:revealLetter,autoConnect:autoConnect,refreshList:refreshList};
+  })();
+
+  document.getElementById('popup-wifi').addEventListener('animationend',function(){
+    if(wifiInp) setTimeout(function(){ wifiInp.focus(); },80);
   });
-  var wifiInp=document.getElementById('wifi-pw-input');
-  if(wifiInp) wifiInp.addEventListener('keydown',function(e){ e.stopPropagation(); if(e.key==='Enter'&&wifiGo) wifiGo.click(); });
 }
 
 function showHint(){
@@ -1155,6 +1446,7 @@ function showHint(){
 }
 
 document.getElementById('hint-x').addEventListener('click',function(){ document.getElementById('hint').classList.remove('on'); });
+
 document.getElementById('btn-lang').addEventListener('click',function(e){ e.stopPropagation(); applyLang(__lang==='en'?'pt':'en'); buildIcons(); buildStartMenu(); });
 document.getElementById('start-btn').addEventListener('click',function(e){ e.stopPropagation(); OS.toggleStart(); });
 document.addEventListener('click',function(e){ if(!e.target.closest('#startmenu')&&!e.target.closest('#start-btn')) OS.toggleStart(false); });
@@ -1232,6 +1524,8 @@ lu.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.p
   draw();
 })();
 
+
+
 (function(){
   initLang();
   buildDynamic();
@@ -1242,6 +1536,7 @@ lu.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.p
   startClock();
   initTray();
 })();
+
 </script>
 </body>
 </html>
